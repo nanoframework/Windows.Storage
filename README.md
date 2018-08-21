@@ -1,8 +1,3 @@
-# lib-Windows.Storage
-nanoframework Windows.Storage library
-
-
-
 ![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
 
 -----
