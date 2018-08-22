@@ -12,5 +12,12 @@ namespace Windows.Storage
     /// </summary>
     public sealed class StorageProvider : IStorageProvider
     {
+        public string DisplayName { get; }
+
+        public string Id { get; }
+
+        public IAsyncOperation<bool> IsPropertySupportedForPartialFileAsync(String propertyCanonicalName)
+        { }
+
     }
 }
