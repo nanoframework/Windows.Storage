@@ -12,6 +12,29 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageFile : IStorageItem, IInputStreamReference, IRandomAccessStreamReference
     {
+        public string ContentType { get; }
+
+        public string FileType { get; }
+
+        public IAsyncAction CopyAndReplaceAsync(IStorageFile fileToReplace);
+
+        public IAsyncOperation<StorageFile> CopyAsync(IStorageFolder destinationFolder);
+
+        public IAsyncOperation<StorageFile> CopyAsync(IStorageFolder destinationFolder, String desiredNewName);
+
+        public IAsyncOperation<StorageFile> CopyAsync(IStorageFolder destinationFolder, String desiredNewName, NameCollisionOption option);
+
+        public IAsyncAction MoveAndReplaceAsync(IStorageFile fileToReplace);
+
+        public IAsyncAction MoveAsync(IStorageFolder destinationFolder);
+
+        public IAsyncAction MoveAsync(IStorageFolder destinationFolder, String desiredNewName);
+
+        public IAsyncAction MoveAsync(IStorageFolder destinationFolder, String desiredNewName, NameCollisionOption option);
+
+        public IAsyncOperation<IRandomAccessStream> OpenAsync(FileAccessMode accessMode);
+
+        public IAsyncOperation<StorageStreamTransaction> OpenTransactedWriteAsync();
 
     }
 }

@@ -12,5 +12,19 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageItemProperties
     {
+        public string DisplayName { get; }
+
+        public string DisplayType { get; }
+
+        public string FolderRelativeId { get; }
+
+        public StorageItemContentProperties Properties { get; }
+
+        public IAsyncOperation<StorageItemThumbnail> GetThumbnailAsync(ThumbnailMode mode);
+
+        public IAsyncOperation<StorageItemThumbnail> GetThumbnailAsync(ThumbnailMode mode, UInt32 requestedSize);
+
+        public IAsyncOperation<StorageItemThumbnail> GetThumbnailAsync(ThumbnailMode mode, UInt32 requestedSize, ThumbnailOptions options);
+
     }
 }

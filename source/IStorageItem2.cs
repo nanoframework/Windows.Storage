@@ -12,5 +12,10 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageItem2 : IStorageItem
     {
+
+        public IAsyncOperation<StorageFolder> GetParentAsync();
+
+        public bool IsEqual(IStorageItem item);
+
     }
 }

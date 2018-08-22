@@ -12,5 +12,6 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageItemPropertiesWithProvider : IStorageItemProperties
     {
+        public StorageProvider Provider { get; }
     }
 }

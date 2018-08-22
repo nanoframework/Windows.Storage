@@ -12,5 +12,6 @@ namespace Windows.Storage
     /// </summary>
     public interface IStreamedFileDataRequest
     {
+        public void FailAndClose(StreamedFileFailureMode failureMode);
     }
 }

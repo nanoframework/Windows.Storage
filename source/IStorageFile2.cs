@@ -12,5 +12,8 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageFile2
     {
+        public IAsyncOperation<IRandomAccessStream> OpenAsync(FileAccessMode accessMode, StorageOpenOptions options);
+
+        public IAsyncOperation<StorageStreamTransaction> OpenTransactedWriteAsync(StorageOpenOptions options);
     }
 }

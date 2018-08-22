@@ -12,5 +12,29 @@ namespace Windows.Storage
     /// </summary>
     public sealed class AppDataPaths : IAppDataPaths
     {
+        public string Cookies { get; }
+
+        public string Desktop { get; }
+
+        public string Documents { get; }
+
+        public string Favorites { get; }
+
+        public string History { get; }
+
+        public string InternetCache { get; }
+
+        public string LocalAppData { get; }
+
+        public string ProgramData { get; }
+
+        public string RoamingAppData { get; }
+
+        public static AppDataPaths GetDefault()
+        { }
+
+        public static AppDataPaths GetForUser(User user)
+        { }
+
     }
 }

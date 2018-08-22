@@ -12,5 +12,11 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageItemProperties2 : IStorageItemProperties
     {
+        public IAsyncOperation<StorageItemThumbnail> GetScaledImageAsThumbnailAsync(ThumbnailMode mode);
+
+        public IAsyncOperation<StorageItemThumbnail> GetScaledImageAsThumbnailAsync(ThumbnailMode mode, UInt32 requestedSize);
+
+        public IAsyncOperation<StorageItemThumbnail> GetScaledImageAsThumbnailAsync(ThumbnailMode mode, UInt32 requestedSize, ThumbnailOptions options);
+
     }
 }

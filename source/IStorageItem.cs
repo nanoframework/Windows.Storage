@@ -12,5 +12,25 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageItem
     {
+        public FileAttributes Attributes { get; }
+
+        public DateTimeOffset DateCreated { get; }
+
+        public string Name { get; }
+
+        public string Path { get; }
+
+        public IAsyncAction DeleteAsync();
+
+        public IAsyncAction DeleteAsync(StorageDeleteOption option);
+
+        public IAsyncOperation<BasicProperties> GetBasicPropertiesAsync();
+
+        public bool IsOfType(StorageItemTypes type);
+
+        public IAsyncAction RenameAsync(String desiredName);
+
+        public IAsyncAction RenameAsync(String desiredName, NameCollisionOption option);
+
     }
 }

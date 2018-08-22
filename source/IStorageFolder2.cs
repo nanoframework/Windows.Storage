@@ -12,5 +12,6 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageFolder2
     {
+        public IAsyncOperation<IStorageItem> TryGetItemAsync(String name);
     }
 }

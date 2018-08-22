@@ -12,5 +12,6 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageFilePropertiesWithAvailability
     {
+        public bool IsAvailable { get; }
     }
 }
