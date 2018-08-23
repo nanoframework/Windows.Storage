@@ -1,4 +1,5 @@
-[![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
+[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Storage.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
+ [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
 
 
 ![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
@@ -6,8 +7,6 @@
 -----
 
 ### Welcome to the **nanoFramework** Windows.Storage Library repository!
-
-[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Storage.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
 
 
 ## Build status
