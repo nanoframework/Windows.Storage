@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "lib-Windows.Storage", "lib-Windows.Storage.nfproj", "{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Windows.Storage", "Windows.Storage.nfproj", "{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
