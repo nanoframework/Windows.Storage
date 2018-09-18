@@ -12,7 +12,8 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Windows.Storage</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
@@ -42,7 +43,7 @@
     <NFMDP_PE_LoadHints Include="packages\nanoFramework.Windows.Storage.Streams.1.0.0-preview201\lib\Windows.Storage.Streams.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
-  </ItemGroup> 
+  </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="AppDataPaths.cs" />
@@ -113,8 +114,8 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Windows.Storage.Streams, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.0.0-preview201\lib\Windows.Storage.Streams.dll</HintPath>
+    <Reference Include="Windows.Storage.Streams, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.0.0-preview203\lib\Windows.Storage.Streams.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
