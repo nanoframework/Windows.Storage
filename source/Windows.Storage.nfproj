@@ -20,6 +20,15 @@
     <DocumentationFile>bin\$(Configuration)\Windows.Storage.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
     <!-- override default options for MetaDataProcessor -->
     <!-- generate PE: TRUE -->
     <NFMDP_PE_SKIP>false</NFMDP_PE_SKIP>
