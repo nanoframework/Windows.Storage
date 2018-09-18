@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Storage.DELIVERABLES", "Nuget.Windows.Storage.DELIVERABLES\Nuget.Windows.Storage.DELIVERABLES.nuproj", "{8D8B5AF4-165A-4070-968D-6A2C58A35273}"
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Storage", "Nuget.Windows.Storage\Nuget.Windows.Storage.nuproj", "{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACA0B0A7-A547-46C8-A3D8-4DA94A464DF5}
+	EndGlobalSection
+EndGlobal

@@ -29,9 +29,9 @@
     GitHubUserName:
       secure: 7OBtVAMTodMWK20wg6pGnQ==
     GitHubUserEmail:
-      secure: HeABB68Sn/Lhbd69C2cUcfWv0ab/rMDEcOLvcxf8gGw=
+      secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
     GitHubToken:
-      secure: WOqlCsnwTzfDPJFoNV/h8mEESIpG/9uFn1u6oE8hGZtXwIQQlsY+NyyLt9Y5xoFn
+      secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
 
   init:
     - git config --global core.autocrlf true
@@ -42,10 +42,10 @@
 
   install:
     - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+    - bundle config --local path vendor/bundle
+    - gem install bundler --quiet --no-ri --no-rdoc
     - gem install github_changelog_generator --quiet --no-ri --no-rdoc
-    # - bundle install
     - choco install gitversion.portable -pre -y
-    - ps: .\install-vsix-appveyor.ps1
 
   before_build:
   - ps: >-
@@ -138,7 +138,29 @@
   build:
     verbosity: minimal
 
+  environment:
+    APPVEYOR_SAVE_CACHE_ON_ERROR: true
+    matrix:
+      - RUBY_VERSION: 24
+    GitHubUserName:
+      secure: 7OBtVAMTodMWK20wg6pGnQ==
+    GitHubUserEmail:
+      secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
+    GitHubToken:
+      secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+
+  init:
+    - git config --global core.autocrlf true
+    - git config --global credential.helper store
+    - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GitHubToken):x-oauth-basic@github.com`n"
+    - git config --global user.email "%GitHubUserEmail%"
+    - git config --global user.name "%GitHubUserName%"
+
   install:
+    - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+    - bundle config --local path vendor/bundle
+    - gem install bundler --quiet --no-ri --no-rdoc
+    - gem install github_changelog_generator --quiet --no-ri --no-rdoc
     - choco install gitversion.portable -pre -y
     - ps: .\install-vsix-appveyor.ps1
 
@@ -222,18 +244,19 @@
 
   build:
     verbosity: minimal
-
+  
   test: off
 
   environment:
+    APPVEYOR_SAVE_CACHE_ON_ERROR: true
     matrix:
       - RUBY_VERSION: 24
     GitHubUserName:
       secure: 7OBtVAMTodMWK20wg6pGnQ==
     GitHubUserEmail:
-      secure: HeABB68Sn/Lhbd69C2cUcfWv0ab/rMDEcOLvcxf8gGw=
+      secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
     GitHubToken:
-      secure: WOqlCsnwTzfDPJFoNV/h8mEESIpG/9uFn1u6oE8hGZtXwIQQlsY+NyyLt9Y5xoFn
+      secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
 
   init:
     - git config --global core.autocrlf true
@@ -243,11 +266,6 @@
     - git config --global user.name "%GitHubUserName%"
 
   install:
-    - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
-    - bundle config --local path vendor/bundle
-    - gem install bundler --quiet --no-ri --no-rdoc
-    - gem install github_changelog_generator --quiet --no-ri --no-rdoc
-    # - bundle install
     - choco install gitversion.portable -pre -y
     - ps: .\install-vsix-appveyor.ps1
 
