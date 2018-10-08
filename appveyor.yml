@@ -32,6 +32,8 @@
       secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
     GitHubToken:
       secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+    GitRestAuth:
+      secure: E3bCMe4LtDdAhHSYRcLp0N6DixJe1m8TNxhYeJW/GnqM3WXdRqsgkHSbwootPjJQtOQJrps4twmzTVzofLSVgPgbzU8PxU0AkJV7zwkyVOE=
 
   init:
     - git config --global core.autocrlf true
@@ -46,6 +48,7 @@
     - gem install bundler --quiet --no-ri --no-rdoc
     - gem install github_changelog_generator --quiet --no-ri --no-rdoc
     - choco install gitversion.portable -pre -y
+    - ps: .\install-vsix-appveyor.ps1
 
   before_build:
   - ps: >-
@@ -54,7 +57,7 @@
 
       nuget restore source\nanoFramework.Windows.Storage.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\Windows.Storage\Properties\AssemblyInfo.cs"
 
   build_script:
   - ps: >-
@@ -62,12 +65,10 @@
       msbuild source\nanoFramework.Windows.Storage.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   before_deploy:
-  # need this to keep ruby happy
-  - ps: md c:\tmp
-  - bundle exec github_changelog_generator --token %GitHubToken%
-  # add here the updated changelog and the updated assembly info files
-  - git add .
-  - git commit --amend --no-edit
+    - ps:  >-
+        .\commit-assemblyinfo-changes.ps1
+        
+        .\generate-change-log.ps1
 
   artifacts:
   - path: '**\bin\Release\*.nupkg'
@@ -83,19 +84,19 @@
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Windows.Storage Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-nanoFramework.Windows.Storage/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Windows.Storage/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-Windows.Storage/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/Windows.Storage/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
     draft: true
-    prerelease: true
+    prerelease: false
     force_update: true
 
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
     - ps: |
 
-          cd ..
+          &  cd $env:APPVEYOR_BUILD_FOLDER > $null
 
           .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
 
@@ -116,7 +117,6 @@
 
   skip_branch_with_pr: true
 
-  # Do not build on tags
   skip_tags: false
 
   test: off
@@ -146,6 +146,8 @@
       secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
     GitHubToken:
       secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+    GitRestAuth:
+      secure: E3bCMe4LtDdAhHSYRcLp0N6DixJe1m8TNxhYeJW/GnqM3WXdRqsgkHSbwootPjJQtOQJrps4twmzTVzofLSVgPgbzU8PxU0AkJV7zwkyVOE=
 
   init:
     - git config --global core.autocrlf true
@@ -169,7 +171,7 @@
 
       nuget restore source\nanoFramework.Windows.Storage.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\Windows.Storage\Properties\AssemblyInfo.cs"
 
   build_script:
   - ps: >-
@@ -186,16 +188,10 @@
     name: Nuget_Packages
 
   deploy:
-  # the provider is actually MyGet but works the same as NuGet
-  - provider: NuGet
-    server: https://www.myget.org/F/nanoframework-dev/api/v2/package
-    api_key:
-      secure: 0drE56FivPFYI3oVZWcVFTpjOXSqyjT6kGangIxFRcRLqMhV3lQHqUButuuiPM+N
-    skip_symbols: true
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Windows.Storage Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-Windows.Storage/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Windows.Storage/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-Windows.Storage/blob/develop/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\npackage: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/Windows.Storage/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
@@ -203,13 +199,20 @@
     prerelease: true
     force_update: true
 
+  before_deploy:
+    - ps:  >-
+        .\commit-assemblyinfo-changes.ps1
+
+        .\generate-change-log.ps1
+
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
     - ps: |
 
-          cd ..
+          &  cd $env:APPVEYOR_BUILD_FOLDER > $null
 
           .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+
   cache:
     - source\packages -> **source\packages.config
     - C:\ProgramData\chocolatey\bin -> appveyor.yml
@@ -225,9 +228,6 @@
   image: Visual Studio 2017
 
   skip_branch_with_pr: true
-
-  # OK to get only last commit as we don't need history
-  clone_depth: 1
 
   # Skipping commits affecting specific files
   skip_commits:
@@ -253,6 +253,8 @@
       secure: /NpmL1KqwHyHFnF0GlUovA586wDIt8Hg/Q8Dro6kUpk=
     GitHubToken:
       secure: i/2hGsqVMwzdM5yIS4rxOIeG3ftx7su7klWYN80s/fHvgk7A5H2fF3oUTNLcyTbw
+    GitRestAuth:
+      secure: E3bCMe4LtDdAhHSYRcLp0N6DixJe1m8TNxhYeJW/GnqM3WXdRqsgkHSbwootPjJQtOQJrps4twmzTVzofLSVgPgbzU8PxU0AkJV7zwkyVOE=
 
   init:
     - git config --global core.autocrlf true
@@ -262,6 +264,10 @@
     - git config --global user.name "%GitHubUserName%"
 
   install:
+    - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+    - bundle config --local path vendor/bundle
+    - gem install bundler --quiet --no-ri --no-rdoc
+    - gem install github_changelog_generator --quiet --no-ri --no-rdoc
     - choco install gitversion.portable -pre -y
     - ps: .\install-vsix-appveyor.ps1
 
@@ -272,20 +278,17 @@
 
       nuget restore source\nanoFramework.Windows.Storage.sln
         
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      C:\ProgramData\chocolatey\lib\GitVersion.Portable\tools\GitVersion.exe /l console /output buildserver /updateAssemblyInfo "source\Windows.Storage\Properties\AssemblyInfo.cs"
 
   build_script:
   - ps: >-
 
       msbuild source\nanoFramework.Windows.Storage.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-  before_deploy:
-  # need this to keep ruby happy
-  - ps: md c:\tmp
-  - bundle exec github_changelog_generator --token %GitHubToken%
-  # add here the updated changelog and the updated assembly info files
-  - git add .
-  - git commit --amend --no-edit
+  on_success:
+  # for this environment variable to work here it has to be set in AppVeyor UI
+  - nuget push source\Nuget.Windows.Storage\bin\Release\Windows.Storage.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
+  - nuget push source\Nuget.Windows.Storage.DELIVERABLES\bin\Release\Windows.Storage.DELIVERABLES.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
 
   artifacts:
   - path: '**\bin\Release\*.nupkg'
@@ -300,7 +303,7 @@
   - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Windows.Storage Library v$(gitversion_semver)
-    description: '[CHANGELOG.md](https://github.com/nanoframework/lib-Windows.Storage/blob/master/CHANGELOG.md)\n\n## Install from NuGet\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.nuget.org/packages/nanoFramework.Windows.Storage/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
+    description: 'Check the [changelog](https://github.com/nanoframework/lib-Windows.Storage/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/Windows.Storage/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
     auth_token:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
@@ -308,13 +311,20 @@
     prerelease: true
     force_update: true
 
+  before_deploy:
+    - ps:  >-
+        .\commit-assemblyinfo-changes.ps1
+
+        .\generate-change-log.ps1
+
   # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
   on_failure:
     - ps: |
 
-          cd ..
+          &  cd $env:APPVEYOR_BUILD_FOLDER > $null
 
           .\appveyor-discord.ps1 failure $env:APPVEYOR_DISCORD_WEBHOOK_URL
+
   cache:
     - source\packages -> **source\packages.config
     - C:\ProgramData\chocolatey\bin -> appveyor.yml
