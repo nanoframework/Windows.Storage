@@ -61,8 +61,6 @@
 
       msbuild source\nanoFramework.Windows.Storage.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-      msbuild source\nanoFramework.Windows.Storage.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
   before_deploy:
   # need this to keep ruby happy
   - ps: md c:\tmp
@@ -178,8 +176,6 @@
 
       msbuild source\nanoFramework.Windows.Storage.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-      msbuild source\nanoFramework.Windows.Storage.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
   on_success:
   # for this environment variable to work here it has to be set in AppVeyor UI
   - nuget push source\Nuget.Windows.Storage\bin\Release\nanoFramework.Windows.Storage.%GitVersion_NuGetVersionV2%.nupkg %MyGetToken% -Source https://www.myget.org/F/nanoframework-dev/api/v2/package
@@ -282,8 +278,6 @@
   - ps: >-
 
       msbuild source\nanoFramework.Windows.Storage.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-      msbuild source\nanoFramework.Windows.Storage.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   before_deploy:
   # need this to keep ruby happy
