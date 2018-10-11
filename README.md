@@ -1,4 +1,4 @@
-[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Storage.svg)]() [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=nanoframework/lib-Windows.Storage)](https://dependabot.com) [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
+[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Storage.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
  [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
 
 
@@ -14,7 +14,7 @@
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Windows.Storage | [![Build status](https://ci.appveyor.com/api/projects/status/ucxkrrmy3pde1x34?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-storage) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.storage.svg)](https://www.nuget.org/packages/nanoFramework.Windows.storage/)  |
+| Windows.Storage | [![Build status](https://ci.appveyor.com/api/projects/status/ucxkrrmy3pde1x34/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-storage/branch/master) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.storage.svg)](https://www.nuget.org/packages/nanoFramework.Windows.storage/)  |
 | Windows.Storage (preview) |[![Build status](https://ci.appveyor.com/api/projects/status/ucxkrrmy3pde1x34/branch/develop?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-storage/branch/develop) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Windows.Storage.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Windows.Storage) |
 
 
