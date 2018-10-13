@@ -143,7 +143,8 @@ for:
     only:
       - /release.*/
 
-    provider: GitHub
+  deploy:
+  - provider: GitHub
     tag: v$(GitVersion_NuGetVersionV2)
     release: nanoFramework Windows.Storage Library v$(gitversion_semver)
     description: 'Check the [changelog](https://github.com/nanoframework/lib-Windows.Storage/blob/$(appveyor_repo_branch)/CHANGELOG.md)\n\n## Install from nanoFramework MyGet development feed\n\nThe following NuGet packages are available for download from this release\n\n:package: [.NET](https://www.myget.org/feed/nanoframework-dev/package/nuget/Windows.Storage/$(GitVersion_NuGetVersionV2)) v$(GitVersion_NuGetVersionV2)'
