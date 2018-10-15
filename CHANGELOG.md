@@ -4,6 +4,7 @@
 
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#12](https://github.com/nanoframework/lib-Windows.Storage/pull/12)
 - Update 2 NuGet dependencies [\#11](https://github.com/nanoframework/lib-Windows.Storage/pull/11)
 - Update 2 NuGet dependencies [\#10](https://github.com/nanoframework/lib-Windows.Storage/pull/10)
 - Bump nanoFramework.Windows.Storage.Streams from 1.0.0-preview201 to 1.0.0-preview203 in /source [\#1](https://github.com/nanoframework/lib-Windows.Storage/pull/1)
