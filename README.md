@@ -1,10 +1,12 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/nanoframework/Home/blob/master/LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Storage.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
+ [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
+
+
 ![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
 
 -----
 
 ### Welcome to the **nanoFramework** Windows.Storage Library repository!
-
-[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Storage.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md)
 
 
 ## Build status
@@ -12,7 +14,7 @@
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Windows.Storage | [![Build status](https://ci.appveyor.com/api/projects/status/ucxkrrmy3pde1x34?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-storage) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.storage.svg)](https://www.nuget.org/packages/nanoFramework.Windows.storage/)  |
+| Windows.Storage | [![Build status](https://ci.appveyor.com/api/projects/status/ucxkrrmy3pde1x34/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-storage/branch/master) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.storage.svg)](https://www.nuget.org/packages/nanoFramework.Windows.storage/)  |
 | Windows.Storage (preview) |[![Build status](https://ci.appveyor.com/api/projects/status/ucxkrrmy3pde1x34/branch/develop?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-storage/branch/develop) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Windows.Storage.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Windows.Storage) |
 
 
@@ -20,7 +22,7 @@
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
 
-Join our Slack community [here](https://join.slack.com/t/nanoframework/shared_invite/enQtMzI3OTg4MTk0NTgwLWQ0ODQ3ZWIwZjgxZWFmNjU3MDIwN2E2YzM2OTdhMWRiY2Q3M2NlOTk2N2IwNTM3MmRlMmQ2NTRlNjZlYzJlMmY).
+Join our Discord community [here](https://discord.gg/gCyBu8T).
 
 
 ## Credits
