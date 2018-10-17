@@ -3,6 +3,7 @@
 ## [v1.0.0](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0) (2018-10-17)
 **Documentation and other chores:**
 
+- Merge 'develop' for Release 1.0.0 [\#15](https://github.com/nanoframework/lib-Windows.Storage/pull/15)
 - Update 2 NuGet dependencies [\#14](https://github.com/nanoframework/lib-Windows.Storage/pull/14)
 - Update 2 NuGet dependencies [\#12](https://github.com/nanoframework/lib-Windows.Storage/pull/12)
 - Update 2 NuGet dependencies [\#11](https://github.com/nanoframework/lib-Windows.Storage/pull/11)
