@@ -79,6 +79,7 @@
     <Compile Include="IStorageItemProperties.cs" />
     <Compile Include="IStorageItemProperties2.cs" />
     <Compile Include="IStorageItemPropertiesWithProvider.cs" />
+    <Compile Include="IStorageProvider.cs" />
     <Compile Include="IStreamedFileDataRequest.cs" />
     <Compile Include="KnownFolderId.cs" />
     <Compile Include="KnownFolders.cs" />
@@ -129,6 +130,7 @@
     </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
+  <Import Project="..\packages\Nerdbank.GitVersioning.2.2.13\build\Nerdbank.GitVersioning.targets" />
   <ProjectExtensions>
     <ProjectCapabilities>
       <ProjectConfigurationsDeclaredAsItems />

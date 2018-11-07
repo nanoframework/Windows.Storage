@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Windows.Storage
 {
@@ -12,40 +13,52 @@ namespace Windows.Storage
     /// </summary>
     public sealed class StorageFolder : IStorageFolder//, IStorageFolder2, IStorageItem, IStorageItem2, IStorageItemProperties, IStorageItemProperties2, IStorageItemPropertiesWithProvider, IStorageFolderQueryOperations
     {
-        //        /// <summary>
-        //        /// Gets the attributes of the current folder.
-        //        /// </summary>
-        //        public FileAttributes Attributes { get; }
+        private KnownFolderId _knownFolderId;
+        private FileAttributes _attributes;
+        private readonly DateTime _dateCreated;
+        private readonly string _displayName;
+        private readonly string _displayType;
+        private readonly string _folderRelativeId;
+        private readonly string _name;
+        private readonly string _path;
 
-        //        /// <summary>
-        //        /// Gets the date and time that the current folder was created.
-        //        /// </summary>
-        //        public DateTimeOffset DateCreated { get; }
+        /// <summary>
+        /// Gets the attributes of the current folder.
+        /// </summary>
+        public FileAttributes Attributes => _attributes;
 
-        //        /// <summary>
-        //        /// Gets the user-friendly name of the current folder.
-        //        /// </summary>
-        //        public string DisplayName { get; }
+        /// <summary>
+        /// Gets the date and time that the current folder was created.
+        /// </summary>
+        /// <remarks>
+        /// This is the nanoFrameowrk equivalent of UWP DateCreated of type DateTimeOffset.
+        /// </remarks>
+        public DateTime DateCreated => _dateCreated;
 
-        //        /// <summary>
-        //        /// Gets the user-friendly description of the type of the folder; for example, JPEG image.
-        //        /// </summary>
-        //        public string DisplayType { get; }
+        /// <summary>
+        /// Gets the user-friendly name of the current folder.
+        /// </summary>
+        public string DisplayName => _displayName;
 
-        //        /// <summary>
-        //        /// Gets an identifier for the current folder. This ID is unique for the query result or StorageFolder that contains the current folder or file group, and can be used to distinguish between items that have the same name.
-        //        /// </summary>
-        //        public string FolderRelativeId { get; }
+        /// <summary>
+        /// Gets the user-friendly description of the type of the folder; for example, JPEG image.
+        /// </summary>
+        public string DisplayType => _displayType;
+
+        /// <summary>
+        /// Gets an identifier for the current folder. This ID is unique for the query result or StorageFolder that contains the current folder or file group, and can be used to distinguish between items that have the same name.
+        /// </summary>
+        public string FolderRelativeId => _folderRelativeId;
 
         /// <summary>
         /// Gets the name of the current folder.
         /// </summary>
-        public string Name { get; }
+        public string Name => _name;
 
         /// <summary>
         /// Gets the full path of the current folder in the file system, if the path is available.
         /// </summary>
-        public string Path { get; }
+        public string Path => _path;
 
         //        /// <summary>
         //        /// Gets an object that provides access to the content-related properties of the current folder.
@@ -56,6 +69,22 @@ namespace Windows.Storage
         //        /// Gets the StorageProvider object that contains info about the service that stores the current folder.
         //        /// </summary>
         //        public StorageProvider Provider { get; }
+
+        internal StorageFolder(KnownFolderId folderId)
+        {
+            // currently there is only support for removable devices
+            if (folderId != KnownFolderId.RemovableDevices)
+            {
+                throw new NotSupportedException();
+            }
+
+            _knownFolderId = folderId;
+
+            _name = "Removable Storage Devices";
+            _folderRelativeId = $@"0\{_name}";
+            _attributes = FileAttributes.Directory;
+            _displayType = "Folder System";
+        }
 
 
         //        public bool AreQueryOptionsSupported(QueryOptions queryOptions)
@@ -123,6 +152,20 @@ namespace Windows.Storage
 
         //        public IAsyncOperation<IReadOnlyList<StorageFolder>> GetFoldersAsync()
         //        { }
+
+        /// <summary>
+        /// Gets the subfolders in the current folder.
+        /// </summary>
+        /// <returns> 
+        /// When this method completes successfully, it returns a list of the subfolders in the current folder. The list is of type StorageFolder.
+        /// Each folder in the list is represented by a StorageFolder object.
+        ///</returns>
+        ///<remarks>
+        /// 
+        ///</remarks>
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern StorageFolder[] GetFolders();
+
 
         //        public IAsyncOperation<IReadOnlyList<StorageFolder>> GetFoldersAsync(CommonFolderQuery query)
         //        { }

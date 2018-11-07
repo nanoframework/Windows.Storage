@@ -12,12 +12,18 @@ namespace Windows.Storage
     /// </summary>
     public sealed class StorageFile : IStorageFile//, IStorageFile2, IStorageFilePropertiesWithAvailability, IStorageItem, IStorageItem2, IStorageItemProperties, IStorageItemProperties2, IStorageItemPropertiesWithProvider, IInputStreamReference, IRandomAccessStreamReference
     {
+
+        private string _contentType;
+        private string _fileType;
+        private string _name;
+        private string _path;
+
         //        public FileAttributes Attributes { get; }
 
         /// <summary>
         /// Gets the MIME type of the contents of the file.
         /// </summary>
-        public string ContentType { get; }
+        public string ContentType => _contentType;
 
         //        public DateTimeOffset DateCreated { get; }
 
@@ -28,7 +34,7 @@ namespace Windows.Storage
         /// <summary>
         /// Gets the type (file name extension) of the file.
         /// </summary>
-        public string FileType { get; }
+        public string FileType => _fileType;
 
         //        public string FolderRelativeId { get; }
 
@@ -37,12 +43,12 @@ namespace Windows.Storage
         /// <summary>
         /// Gets the name of the file including the file name extension.
         /// </summary>
-        public string Name { get; }
+        public string Name => _name;
 
         /// <summary>
         /// Gets the full file-system path of the current file, if the file has a path.
         /// </summary>
-        public string Path { get; }
+        public string Path => _path;
 
         //        public StorageItemContentProperties Properties { get; }
 

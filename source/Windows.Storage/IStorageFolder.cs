@@ -27,6 +27,7 @@ namespace Windows.Storage
         //        public IAsyncOperation<StorageFolder> GetFolderAsync(String name);
 
         //        public IAsyncOperation<IReadOnlyList<StorageFolder>> GetFoldersAsync();
+        //StorageFolder[] GetFolders();
 
         //        public IAsyncOperation<IStorageItem> GetItemAsync(String name);
 
