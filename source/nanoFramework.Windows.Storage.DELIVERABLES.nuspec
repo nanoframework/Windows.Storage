@@ -23,11 +23,11 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="nanoFramework.Windows.Storage\bin\Release\Stubs\*.*" target="content\Stubs\" />
-    <file src="nanoFramework.Windows.Storage\obj\Release\*.txt" target="content\txt\" />
-    <file src="nanoFramework.Windows.Storage\obj\Release\*.dump" target="content\dump\" />
-    <file src="nanoFramework.Windows.Storage\obj\Release\*.strings" target="content\dump\" />
-    <file src="nanoFramework.Windows.Storage\obj\Release\*.resources" target="content\resources\" />
-    <file src="nanoFramework.Windows.Storage\obj\Release\*.il" target="content\disasm\" />
+    <file src="Windows.Storage\bin\Release\Stubs\*.*" target="content\Stubs\" />
+    <file src="Windows.Storage\obj\Release\*.txt" target="content\txt\" />
+    <file src="Windows.Storage\obj\Release\*.dump" target="content\dump\" />
+    <file src="Windows.Storage\obj\Release\*.strings" target="content\dump\" />
+    <file src="Windows.Storage\obj\Release\*.resources" target="content\resources\" />
+    <file src="Windows.Storage\obj\Release\*.il" target="content\disasm\" />
   </files>
 </package>

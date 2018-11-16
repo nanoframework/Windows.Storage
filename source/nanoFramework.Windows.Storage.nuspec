@@ -22,10 +22,10 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="nanoFramework.Windows.Storage\bin\Release\nanoFramework.Windows.Storage.dll" target="lib\nanoFramework.Windows.Storage.dll" />
-    <file src="nanoFramework.Windows.Storage\bin\Release\nanoFramework.Windows.Storage.pdb" target="lib\nanoFramework.Windows.Storage.pdb" />
-    <file src="nanoFramework.Windows.Storage\bin\Release\nanoFramework.Windows.Storage.pdbx" target="lib\nanoFramework.Windows.Storage.pdbx" />
-    <file src="nanoFramework.Windows.Storage\bin\Release\nanoFramework.Windows.Storage.pe" target="lib\nanoFramework.Windows.Storage.pe" />
-    <file src="nanoFramework.Windows.Storage\bin\Release\nanoFramework.Windows.Storage.xml" target="lib\nanoFramework.Windows.Storage.xml" />
+    <file src="Windows.Storage\bin\Release\Windows.Storage.dll" target="lib\Windows.Storage.dll" />
+    <file src="Windows.Storage\bin\Release\Windows.Storage.pdb" target="lib\Windows.Storage.pdb" />
+    <file src="Windows.Storage\bin\Release\Windows.Storage.pdbx" target="lib\Windows.Storage.pdbx" />
+    <file src="Windows.Storage\bin\Release\Windows.Storage.pe" target="lib\Windows.Storage.pe" />
+    <file src="Windows.Storage\bin\Release\Windows.Storage.xml" target="lib\Windows.Storage.xml" />
   </files>
 </package>
