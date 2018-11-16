@@ -13,19 +13,36 @@ namespace Windows.Storage
     /// </summary>
     public sealed class StorageFolder : IStorageFolder//, IStorageFolder2, IStorageItem, IStorageItem2, IStorageItemProperties, IStorageItemProperties2, IStorageItemPropertiesWithProvider, IStorageFolderQueryOperations
     {
-        private KnownFolderId _knownFolderId;
-        private FileAttributes _attributes;
+        #region constants
+
+        private const string s_RemovableStorageDevicesName = "Removable Storage Devices";
+        private const string s_RemovableStorageDevicesDisplayType = "System Folder";
+
+        #endregion
+
+        #region backing and internal fields
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private readonly KnownFolderId _knownFolderId;
+
+        #pragma warning disable 0649
+        // this field is set in native code
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private readonly DateTime _dateCreated;
-        private readonly string _displayName;
-        private readonly string _displayType;
-        private readonly string _folderRelativeId;
+        #pragma warning restore 0649
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private readonly string _name;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private readonly string _path;
+
+        #endregion
 
         /// <summary>
         /// Gets the attributes of the current folder.
         /// </summary>
-        public FileAttributes Attributes => _attributes;
+        public FileAttributes Attributes => FileAttributes.Directory;
 
         /// <summary>
         /// Gets the date and time that the current folder was created.
@@ -35,20 +52,20 @@ namespace Windows.Storage
         /// </remarks>
         public DateTime DateCreated => _dateCreated;
 
-        /// <summary>
-        /// Gets the user-friendly name of the current folder.
-        /// </summary>
-        public string DisplayName => _displayName;
+        ///// <summary>
+        ///// Gets the user-friendly name of the current folder.
+        ///// </summary>
+        //public string DisplayName => _displayName;
 
-        /// <summary>
-        /// Gets the user-friendly description of the type of the folder; for example, JPEG image.
-        /// </summary>
-        public string DisplayType => _displayType;
+        ///// <summary>
+        ///// Gets the user-friendly description of the type of the folder; for example, JPEG image.
+        ///// </summary>
+        //public string DisplayType => _displayType;
 
-        /// <summary>
-        /// Gets an identifier for the current folder. This ID is unique for the query result or StorageFolder that contains the current folder or file group, and can be used to distinguish between items that have the same name.
-        /// </summary>
-        public string FolderRelativeId => _folderRelativeId;
+        ///// <summary>
+        ///// Gets an identifier for the current folder. This ID is unique for the query result or StorageFolder that contains the current folder or file group, and can be used to distinguish between items that have the same name.
+        ///// </summary>
+        //public string FolderRelativeId => _folderRelativeId;
 
         /// <summary>
         /// Gets the name of the current folder.
@@ -79,13 +96,9 @@ namespace Windows.Storage
             }
 
             _knownFolderId = folderId;
-
-            _name = "Removable Storage Devices";
-            _folderRelativeId = $@"0\{_name}";
-            _attributes = FileAttributes.Directory;
-            _displayType = "Folder System";
+            _name = s_RemovableStorageDevicesName;
+            _path = "";
         }
-
 
         //        public bool AreQueryOptionsSupported(QueryOptions queryOptions)
         //        { }
@@ -161,10 +174,22 @@ namespace Windows.Storage
         /// Each folder in the list is represented by a StorageFolder object.
         ///</returns>
         ///<remarks>
-        /// 
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFoldersAsync().
         ///</remarks>
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern StorageFolder[] GetFolders();
+        public StorageFolder[] GetFolders()
+        {
+            // is this a call for a known folder ID
+            // RemovableDevices
+            // nothing else is implemented, no need to check as this doesn't get pass the constructor StorageFolder(KnownFolderId folderId)
+            if (_knownFolderId == KnownFolderId.RemovableDevices)
+            {
+                return GetRemovableStorageFoldersNative();
+            }
+
+            // regular get folders
+            return GetStorageFoldersNative();
+        }
 
 
         //        public IAsyncOperation<IReadOnlyList<StorageFolder>> GetFoldersAsync(CommonFolderQuery query)
@@ -229,5 +254,20 @@ namespace Windows.Storage
 
         //        public IAsyncOperation<IStorageItem> TryGetItemAsync(String name)
         //        { }
+
+        #region Native calls 
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern StorageFolder[] GetRemovableStorageFoldersNative();
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern StorageFolder[] GetStorageFoldersNative();
+
+        #endregion
+
     }
 }
