@@ -14,8 +14,8 @@
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Windows.Storage | [![Build status](https://ci.appveyor.com/api/projects/status/ucxkrrmy3pde1x34/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-storage/branch/master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Windows.storage.svg)](https://www.nuget.org/packages/nanoFramework.Windows.storage/)  |
-| Windows.Storage (preview) | [![Build Status](https://dev.azure.com/nanoframework/Windows.Storage/_apis/build/status/nanoframework.lib-Windows.Storage)](https://dev.azure.com/nanoframework/Windows.Storage/_build/latest?definitionId=14) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Windows.Storage.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Windows.Storage) |
+| Windows.Storage | [![Build Status](https://dev.azure.com/nanoframework/Windows.Storage/_apis/build/status/nanoframework.lib-Windows.Storage?branchName=develop)](https://dev.azure.com/nanoframework/Windows.Storage/_build/latest?definitionId=14?branchName=master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Windows.storage.svg)](https://www.nuget.org/packages/nanoFramework.Windows.storage/)  |
+| Windows.Storage (preview) | [![Build Status](https://dev.azure.com/nanoframework/Windows.Storage/_apis/build/status/nanoframework.lib-Windows.Storage?branchName=develop)](https://dev.azure.com/nanoframework/Windows.Storage/_build/latest?definitionId=14?branchName=develop) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Windows.Storage.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Windows.Storage) |
 
 
 ## Feedback and documentation
