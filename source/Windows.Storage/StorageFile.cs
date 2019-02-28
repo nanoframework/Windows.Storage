@@ -3,6 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
+
 using System;
 
 namespace Windows.Storage
@@ -12,37 +13,109 @@ namespace Windows.Storage
     /// </summary>
     public sealed class StorageFile : IStorageFile//, IStorageFile2, IStorageFilePropertiesWithAvailability, IStorageItem, IStorageItem2, IStorageItemProperties, IStorageItemProperties2, IStorageItemPropertiesWithProvider, IInputStreamReference, IRandomAccessStreamReference
     {
+        #region backing and internal fields
 
-        private string _contentType;
-        private string _fileType;
+#pragma warning disable 0649
+
+        // this field is set in native code
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private readonly DateTime _dateCreated;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _name;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         private string _path;
 
-        //        public FileAttributes Attributes { get; }
+#pragma warning restore 0649
+
+        #endregion
+
+        /// <summary>
+        /// Gets the attributes of a file.
+        /// </summary>
+        /// <value>
+        /// The file attributes.
+        /// </value>
+        public FileAttributes Attributes => FileAttributes.Normal;
 
         /// <summary>
         /// Gets the MIME type of the contents of the file.
         /// </summary>
-        public string ContentType => _contentType;
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string ContentType => "";
 
-        //        public DateTimeOffset DateCreated { get; }
+        /// <summary>
+        /// Gets the date and time that the current folder was created.
+        /// </summary>
+        /// <remarks>
+        /// This is the nanoFrameowrk equivalent of UWP DateCreated of type DateTimeOffset.
+        /// </remarks>
+        public DateTime DateCreated => _dateCreated;
 
-        //        public string DisplayName { get; }
+        /// <summary>
+        /// Gets the user-friendly name of the current folder.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string DisplayName => "";
 
-        //        public string DisplayType { get; }
+        /// <summary>
+        /// Gets the user-friendly description of the type of the folder; for example, JPEG image.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string DisplayType => "";
 
         /// <summary>
         /// Gets the type (file name extension) of the file.
         /// </summary>
-        public string FileType => _fileType;
+        public string FileType
+        {
+            get
+            {
+                if(_name != null)
+                {
+                    var dotIndex = _name.LastIndexOf('.');
 
-        //        public string FolderRelativeId { get; }
+                    return _name.Substring(dotIndex + 1, _name.Length - dotIndex - 1);
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
 
-        //        public bool IsAvailable { get; }
+        /// <summary>
+        /// Gets an identifier for the file. This ID is unique for the query result or <see cref="StorageFolder"/> that contains the file and can be used to distinguish between items that have the same name.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string FolderRelativeId => "";
+
+        /// <summary>
+        /// Indicates if the file is local, is cached locally, or can be downloaded.
+        /// </summary>
+        /// <value>
+        /// True if the file is local, is cached locally, or can be downloaded. Otherwise, false.
+        /// </value>
+        ///<remarks>
+        /// This property is always true in nanoFramework.
+        ///</remarks>
+        public bool IsAvailable => true;
 
         /// <summary>
         /// Gets the name of the file including the file name extension.
         /// </summary>
+        /// <value>
+        /// The name of the file including the file name extension.
+        /// </value>
         public string Name => _name;
 
         /// <summary>

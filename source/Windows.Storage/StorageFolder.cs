@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Windows.Storage.Search;
 
 namespace Windows.Storage
 {
@@ -42,6 +43,9 @@ namespace Windows.Storage
         /// <summary>
         /// Gets the attributes of the current folder.
         /// </summary>
+        /// <value>
+        /// The attributes of the current folder.
+        /// </value>
         public FileAttributes Attributes => FileAttributes.Directory;
 
         /// <summary>
@@ -52,24 +56,36 @@ namespace Windows.Storage
         /// </remarks>
         public DateTime DateCreated => _dateCreated;
 
-        ///// <summary>
-        ///// Gets the user-friendly name of the current folder.
-        ///// </summary>
-        //public string DisplayName => _displayName;
+        /// <summary>
+        /// Gets the user-friendly name of the current folder.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string DisplayName => "";
 
-        ///// <summary>
-        ///// Gets the user-friendly description of the type of the folder; for example, JPEG image.
-        ///// </summary>
-        //public string DisplayType => _displayType;
+        /// <summary>
+        /// Gets the user-friendly description of the type of the folder.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string DisplayType => "";
 
-        ///// <summary>
-        ///// Gets an identifier for the current folder. This ID is unique for the query result or StorageFolder that contains the current folder or file group, and can be used to distinguish between items that have the same name.
-        ///// </summary>
-        //public string FolderRelativeId => _folderRelativeId;
+        /// <summary>
+        /// Gets an identifier for the current folder. This ID is unique for the query result or <see cref="StorageFolder"/> that contains the current folder or file group, and can be used to distinguish between items that have the same name.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string FolderRelativeId => "";
 
         /// <summary>
         /// Gets the name of the current folder.
         /// </summary>
+        /// <value>
+        /// The name of the current folder.
+        /// </value>
         public string Name => _name;
 
         /// <summary>
@@ -148,14 +164,71 @@ namespace Windows.Storage
         //        public IAsyncOperation<StorageFile> GetFileAsync(String name)
         //        { }
 
-        //        public IAsyncOperation<IReadOnlyList<StorageFile>> GetFilesAsync()
-        //        { }
 
-        //        public IAsyncOperation<IReadOnlyList<StorageFile>> GetFilesAsync(CommonFileQuery query)
-        //        { }
+        /// <summary>
+        /// Gets the files in the current folder.
+        /// </summary>
+        /// <returns>
+        /// When this method completes successfully, it returns a list of the files in the current folder. 
+        /// The list is of type <see cref="StorageFile"/>. Each file in the list is represented by a <see cref="StorageFile"/> object.
+        /// </returns>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFilesAsync().
+        ///</remarks> 
+        public StorageFile[] GetFiles()
+        {
+            return GetStorageFilesNative(0, UInt32.MaxValue);
+        }
 
-        //        public IAsyncOperation<IReadOnlyList<StorageFile>> GetFilesAsync(CommonFileQuery query, UInt32 startIndex, UInt32 maxItemsToRetrieve)
-        //        { }
+        /// <summary>
+        /// Gets the files in the current folder. Also gets the files from the subfolders of the current folder when the value of the query argument is something other than <see cref="CommonFileQuery.DefaultQuery"/>.
+        /// Files are sorted based on the specified value from the <see cref="CommonFileQuery"/> enumeration.
+        /// </summary>
+        /// <param name="query">One of the enumeration values that specifies how to sort the files and determines whether the query is shallow or deep.</param>
+        /// <returns>
+        /// When this method completes successfully, it returns a flat list of files, sorted as specified by query. 
+        /// The list is of type <see cref="StorageFile"/>. Each file in the list is represented by a <see cref="StorageFile"/> object.
+        /// </returns>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFilesAsync(CommonFileQuery).
+        ///</remarks> 
+        public StorageFile[] GetFiles(CommonFileQuery query)
+        {
+            // check CommonFileQuery
+            if(query != CommonFileQuery.DefaultQuery)
+            {
+                throw new ArgumentException();
+            }
+
+            return GetStorageFilesNative(0, UInt32.MaxValue);
+        }
+
+        /// <summary>
+        /// Gets an index-based range of files from the list of all files in the current folder. Also gets the files from the subfolders of the current folder when the value of the query argument is something other than <see cref="CommonFileQuery.DefaultQuery"/>. Files are sorted based on the specified value from the <see cref="CommonFileQuery"/> enumeration.
+        /// </summary>
+        /// <param name="query">One of the enumeration values that specifies how to sort the files and determines whether the query is shallow or deep.</param>
+        /// <param name="startIndex">The zero-based index of the first file in the range to retrieve.</param>
+        /// <param name="maxItemsToRetrieve">The maximum number of files to retrieve.</param>
+        /// <returns>
+        /// When this method completes successfully, it returns a flat list of files, sorted as specified by query. 
+        /// The list is of type <see cref="StorageFile"/>. Each file in the list is represented by a <see cref="StorageFile"/> object.
+        /// </returns>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFilesAsync(CommonFileQuery, UInt32, UInt32).
+        ///</remarks> 
+        public StorageFile[] GetFiles(CommonFileQuery query, UInt32 startIndex, UInt32 maxItemsToRetrieve)
+        {
+            // check CommonFileQuery
+            if (query != CommonFileQuery.DefaultQuery)
+            {
+                throw new ArgumentException();
+            }
+
+            return GetStorageFilesNative(startIndex, maxItemsToRetrieve);
+        }
 
         //        public IAsyncOperation<StorageFolder> GetFolderAsync(String name)
         //        { }
@@ -231,8 +304,17 @@ namespace Windows.Storage
         //        public IAsyncOperation<StorageItemThumbnail> GetThumbnailAsync(ThumbnailMode mode, UInt32 requestedSize, ThumbnailOptions options)
         //        { }
 
-        //        public bool IsCommonFileQuerySupported(CommonFileQuery query)
-        //        { }
+        /// <summary>
+        /// Indicates whether the current folder supports the specified <see cref="CommonFileQuery"/>.
+        /// </summary>
+        /// <param name="query">The value to test.</param>
+        /// <returns>
+        /// True if the folder supports the specified <see cref="CommonFileQuery"/> otherwise, false.
+        /// </returns>
+        public bool IsCommonFileQuerySupported(CommonFileQuery query)
+        {
+            return query == CommonFileQuery.DefaultQuery;
+        }
 
         //        public bool IsCommonFolderQuerySupported(CommonFolderQuery query)
         //        { }
@@ -266,6 +348,11 @@ namespace Windows.Storage
         [System.Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern StorageFolder[] GetStorageFoldersNative();
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern StorageFile[] GetStorageFilesNative(uint startIndex, uint maxItemsToRetrieve);
 
         #endregion
 

@@ -87,6 +87,7 @@
     <Compile Include="NameCollisionOption.cs" />
     <Compile Include="PathIO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\CommonFileQuery.cs" />
     <Compile Include="SetVersionDeferral.cs" />
     <Compile Include="SetVersionRequest.cs" />
     <Compile Include="StorageDeleteOption.cs" />
@@ -123,6 +124,7 @@
     <Reference Include="mscorlib, Version=1.1.1.7, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.1.1\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="Windows.Storage.Streams, Version=1.0.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Windows.Storage.Streams.1.0.4\lib\Windows.Storage.Streams.dll</HintPath>
