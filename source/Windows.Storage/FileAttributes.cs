@@ -20,11 +20,11 @@ namespace Windows.Storage
         /// The item is a directory.
         /// </summary>
         Directory = 16,
-        
-        ///// <summary>
-        ///// The item is locally incomplete. Windows only.
-        ///// </summary>
-        //LocallyIncomplete = 512,
+
+        /// <summary>
+        /// The item is locally incomplete. Windows only.
+        /// </summary>
+        LocallyIncomplete = 512,
 
         /// <summary>
         /// The item is normal. That is, the item doesn't have any of the other values in the enumeration.
@@ -35,10 +35,10 @@ namespace Windows.Storage
         /// The item is read-only.
         /// </summary>
         ReadOnly = 1,
-        
-        ///// <summary>
-        ///// The item is a temporary file.
-        ///// </summary>
-        //Temporary = 256
+
+        /// <summary>
+        /// The item is a temporary file.
+        /// </summary>
+        Temporary = 256
     }
 }
