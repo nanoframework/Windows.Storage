@@ -4,8 +4,13 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0...HEAD)
 
+**Implemented enhancements:**
+
+- Work on StorageFolder and StorageFile [\#23](https://github.com/nanoframework/lib-Windows.Storage/pull/23)
+
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#22](https://github.com/nanoframework/lib-Windows.Storage/pull/22)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.0 to 1.0.2-preview-006 [\#19](https://github.com/nanoframework/lib-Windows.Storage/pull/19)
 
 ## [v1.0.0](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0) (2018-10-17)
