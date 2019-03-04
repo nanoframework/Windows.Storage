@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Add support for creating folders and files [\#24](https://github.com/nanoframework/lib-Windows.Storage/pull/24)
 - Work on StorageFolder and StorageFile [\#23](https://github.com/nanoframework/lib-Windows.Storage/pull/23)
 
 **Documentation and other chores:**
