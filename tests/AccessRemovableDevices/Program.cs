@@ -1,17 +1,24 @@
-﻿using System;
+﻿//
+// Copyright (c) 2019 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System.Threading;
 using Windows.Storage;
 
-namespace AccessSDcard
+namespace AccessRemovableDevices
 {
     public class Program
     {
         public static void Main()
         {
-            // need to wait for the drives to be enumrated
+            // need to wait to allow time for the drives to be enumerated
             Thread.Sleep(3000);
 
             // Get the logical root folder for all removable storage devices
+            // in nanoFramework the drive letters are fixed, being:
+            // D: SD Card
+            // E: USB Mass Storage Device
             StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
             // list all removable storage devices

@@ -119,8 +119,36 @@ namespace Windows.Storage
         //        public bool AreQueryOptionsSupported(QueryOptions queryOptions)
         //        { }
 
-        //        public IAsyncOperation<StorageFile> CreateFileAsync(String desiredName)
-        //        { }
+        /// <summary>
+        /// Creates a new file with the specified name in the current folder.
+        /// </summary>
+        /// <param name="desiredName">The name of the new file to create in the current folder.</param>
+        /// <returns>When this method completes, it returns a <see cref="StorageFile"/> that represents the new file.</returns>
+        ///<remarks>
+        /// This method uses the FailIfExists value from the <see cref="CreationCollisionOption"/> enumeration by default. That is, this method raises an exception if a subfolder with the same name already exists in the current folder. If you want to handle a folder name collision in a different way, call the <see cref="CreateFile(string, CreationCollisionOption)"/> method.
+        ///
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be CreateFileAsync(String).
+        ///</remarks>
+        public StorageFile CreateFile(String desiredName)
+        {
+            return CreateFile(desiredName, CreationCollisionOption.FailIfExists);
+        }
+
+        /// <summary>
+        /// Creates a new file with the specified name in the current folder.
+        /// </summary>
+        /// <param name="desiredName">The name of the new file to create in the current folder.</param>
+        /// <param name="options">One of the enumeration values that determines how to handle the collision if a file with the specified desiredName already exists in the current folder.</param>
+        /// <returns>When this method completes, it returns a <see cref="StorageFile"/> that represents the new file.</returns>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be CreateFileAsync(String, CreationCollisionOption).
+        ///</remarks>
+        public StorageFile CreateFile(String desiredName, CreationCollisionOption options)
+        {
+            return CreateFileNative(desiredName, (UInt32)options);
+        }
 
         //        public StorageFileQueryResult CreateFileQuery()
         //        { }
@@ -131,11 +159,40 @@ namespace Windows.Storage
         //        public StorageFileQueryResult CreateFileQueryWithOptions(QueryOptions queryOptions)
         //        { }
 
-        //        public IAsyncOperation<StorageFolder> CreateFolderAsync(String desiredName)
-        //        { }
+        /// <summary>
+        /// Creates a new subfolder with the specified name in the current folder.
+        /// </summary>
+        /// <param name="desiredName">The name of the new subfolder to create in the current folder.</param>
+        /// <returns>
+        /// When this method completes, it returns a <see cref="StorageFolder"/> that represents the new subfolder.
+        /// </returns>
+        ///<remarks>
+        /// This method uses the FailIfExists value from the <see cref="CreationCollisionOption"/> enumeration by default. That is, this method raises an exception if a subfolder with the same name already exists in the current folder. If you want to handle a folder name collision in a different way, call the <see cref="CreateFolder(string, CreationCollisionOption)"/> method.
+        /// 
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be CreateFolderAsync(String).
+        ///</remarks>
+        public StorageFolder CreateFolder(String desiredName)
+        {
+            return CreateFolder(desiredName, CreationCollisionOption.FailIfExists);
+        }
 
-        //        public IAsyncOperation<StorageFolder> CreateFolderAsync(String desiredName, CreationCollisionOption options)
-        //        { }
+        /// <summary>
+        /// Creates a new subfolder with the specified name in the current folder. This method also specifies what to do if a subfolder with the same name already exists in the current folder.
+        /// </summary>
+        /// <param name="desiredName">The name of the new subfolder to create in the current folder.</param>
+        /// <param name="options">One of the enumeration values that determines how to handle the collision if a subfolder with the specified desiredName already exists in the current folder.</param>
+        /// <returns>
+        /// When this method completes, it returns a <see cref="StorageFolder"/> that represents the new subfolder.
+        /// </returns>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be CreateFolderAsync(String, CreationCollisionOption).
+        ///</remarks>
+        public StorageFolder CreateFolder(String desiredName, CreationCollisionOption options)
+        {
+            return CreateFolderNative(desiredName, (UInt32)options);
+        }
 
         //        public StorageFolderQueryResult CreateFolderQuery()
         //        { }
@@ -353,6 +410,16 @@ namespace Windows.Storage
         [System.Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern StorageFile[] GetStorageFilesNative(uint startIndex, uint maxItemsToRetrieve);
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern StorageFile CreateFileNative(string desiredName, uint options);
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern StorageFolder CreateFolderNative(string desiredName, uint options);
 
         #endregion
 
