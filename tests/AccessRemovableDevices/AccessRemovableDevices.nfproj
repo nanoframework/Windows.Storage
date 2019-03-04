@@ -15,6 +15,10 @@
     <RootNamespace>AccessSDcard</RootNamespace>
     <AssemblyName>AccessSDcard</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <Name>AccessRemovableDevices</Name>
+  </PropertyGroup>
+  <PropertyGroup Label="nanoFramework">
+    <NF_GenerateStubsRootName>AccessRemovableDevices</NF_GenerateStubsRootName>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
