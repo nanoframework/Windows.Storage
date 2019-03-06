@@ -23,6 +23,9 @@ namespace FileAccess
             // write text and read to/from a file
             Scenario3_WriteAndReadTextInAFile.Execute();
 
+            // write bytes and read to/from a file
+            Scenario4_WriteAndReadBytesInAFile.Execute();
+
             Thread.Sleep(Timeout.Infinite);
         }
     }

@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Windows.Storage.Streams;
 
 namespace Windows.Storage
 {
@@ -33,10 +34,24 @@ namespace Windows.Storage
 
         //        }
 
-        //        ReadBufferAsync(IStorageFile)
-        //        {
-
-        //        }
+        /// <summary>
+        /// Reads the contents of the specified file and returns a buffer.
+        /// </summary>
+        /// <param name="file">The file to read.</param>
+        /// <returns>
+        /// When this method completes, it returns an object (type <see cref="IBuffer"/>) that represents the contents of the file.
+        /// </returns>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be ReadBufferAsync(IStorageFile).
+        ///</remarks>
+        public static IBuffer ReadBuffer(IStorageFile file)
+        {
+            byte[] tempBuffer = null;
+            ReadBufferNative(file, ref tempBuffer);
+            ByteBuffer buffer = new ByteBuffer(tempBuffer);
+            return (IBuffer)buffer;
+        }
 
         //        ReadLinesAsync(IStorageFile)
         //        {
@@ -61,24 +76,46 @@ namespace Windows.Storage
         /// This method is exclusive of nanoFramework and it's not available in the UWP API.
         /// The equivalent method would be ReadTextAsync(IStorageFile).
         ///</remarks>
-        [System.Diagnostics.DebuggerStepThrough]
-        [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern static String ReadText(IStorageFile file);
+        public static String ReadText(IStorageFile file)
+        {
+            String text = null;
+
+            ReadTextNative(file, ref text);
+
+            return text;
+        }
 
         //        ReadTextAsync(IStorageFile, UnicodeEncoding)
         //        {
 
         //        }
 
-        //        WriteBufferAsync(IStorageFile, IBuffer)
-        //        {
+        /// <summary>
+        /// Writes data from a buffer to the specified file.
+        /// </summary>
+        /// <param name="file">The file that the buffer of data is written to.</param>
+        /// <param name="buffer">The buffer that contains the data to write.</param>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be WriteBuffer(IStorageFile, IBuffer).
+        ///</remarks>
+        public static void WriteBuffer(IStorageFile file, IBuffer buffer)
+        {
+            WriteBytes(file, ((ByteBuffer)buffer).Data);
+        }
 
-        //        }
-
-        //        WriteBytesAsync(IStorageFile, Byte[])
-        //        {
-
-        //        }
+        /// <summary>
+        /// Writes an array of bytes of data to the specified file.
+        /// </summary>
+        /// <param name="file">The file that the byte is written to.</param>
+        /// <param name="buffer">The array of bytes to write.</param>
+        ///<remarks>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be WriteBytesAsync(IStorageFile, Byte[]).
+        ///</remarks>
+        [System.Diagnostics.DebuggerStepThrough]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern static void WriteBytes(IStorageFile file, Byte[] buffer);
 
         //        WriteLinesAsync(IStorageFile, IIterable<String>)
         //        {
@@ -112,5 +149,17 @@ namespace Windows.Storage
         //        {
 
         //        }
+
+        #region Native calls
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static void ReadBufferNative(IStorageFile file, ref byte[] buffer);
+        [System.Diagnostics.DebuggerStepThrough]
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern static void ReadTextNative(IStorageFile file, ref string text);
+        #endregion
+
     }
 }
