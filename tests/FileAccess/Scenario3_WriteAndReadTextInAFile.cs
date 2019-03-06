@@ -12,6 +12,8 @@ namespace FileAccess
     {
         public static void Execute()
         {
+            string textFromFile = null;
+
             // Get the logical root folder for all removable storage devices
             // in nanoFramework the drive letters are fixed, being:
             // D: SD Card
@@ -43,14 +45,22 @@ namespace FileAccess
                 try
                 {
                     // read text from the file
-                    var textFromFile = FileIO.ReadText(myFile);
+                    textFromFile = FileIO.ReadText(myFile);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"ERROR: write operation on file failed.");
+                    Console.WriteLine($"ERROR: read operation on file failed.");
                 }
 
-
+                // compare
+                if(textContent.GetHashCode() == textFromFile.GetHashCode())
+                {
+                    Console.WriteLine($"OK: read text matches written text.");
+                }
+                else
+                {
+                    Console.WriteLine($"ERROR: read text does not match written text.");
+                }
             }
             else
             {
