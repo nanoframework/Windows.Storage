@@ -52,6 +52,9 @@
     <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Windows.Storage.Streams.1.0.5-preview-009\lib\Windows.Storage.Streams.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Runtime.Events.1.0.5-preview-010\lib\nanoFramework.Runtime.Events.dll">
+      <InProject>false</InProject>
+    </NFMDP_PE_LoadHints>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
@@ -91,6 +94,8 @@
     <Compile Include="SetVersionDeferral.cs" />
     <Compile Include="SetVersionRequest.cs" />
     <Compile Include="StorageDeleteOption.cs" />
+    <Compile Include="StorageEventManager.cs" />
+    <Compile Include="RemovableDeviceEventArgs.cs" />
     <Compile Include="StorageFile.cs" />
     <Compile Include="StorageFolder.cs" />
     <Compile Include="StorageItemTypes.cs" />
@@ -123,6 +128,11 @@
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.1.1.7, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.1.1\lib\mscorlib.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.0.5.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.5-preview-010\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
