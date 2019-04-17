@@ -165,6 +165,11 @@ namespace Windows.Storage
         /// </summary>
         /// <param name="path">The path of the file to get a StorageFile to represent.</param>
         /// <returns>Returns the file as a StorageFile.</returns>
+        ///<remarks>
+        ///
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFileFromPathAsync(String).
+        ///</remarks>
         public static StorageFile GetFileFromPath(String path)
         {
             StorageFile file = new StorageFile();
