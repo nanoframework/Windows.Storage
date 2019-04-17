@@ -2,7 +2,21 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-035...HEAD)
+
+**Fixed bugs:**
+
+- Add missing dependency in nuspec [\#31](https://github.com/nanoframework/lib-Windows.Storage/pull/31)
+
+## [v1.0.0-preview-035](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-035) (2019-04-03)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-033...v1.0.0-preview-035)
+
+**Implemented enhancements:**
+
+- Add event manager [\#30](https://github.com/nanoframework/lib-Windows.Storage/pull/30)
+
+## [v1.0.0-preview-033](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-033) (2019-03-11)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0...v1.0.0-preview-033)
 
 **Implemented enhancements:**
 
