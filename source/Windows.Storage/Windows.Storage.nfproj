@@ -91,6 +91,7 @@
     <Compile Include="SetVersionDeferral.cs" />
     <Compile Include="SetVersionRequest.cs" />
     <Compile Include="StorageDeleteOption.cs" />
+    <Compile Include="StorageDevices.cs" />
     <Compile Include="StorageFile.cs" />
     <Compile Include="StorageFolder.cs" />
     <Compile Include="StorageItemTypes.cs" />

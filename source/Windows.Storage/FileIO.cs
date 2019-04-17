@@ -158,7 +158,7 @@ namespace Windows.Storage
         [System.Diagnostics.DebuggerStepThrough]
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        public extern static void ReadTextNative(IStorageFile file, ref string text);
+        private extern static void ReadTextNative(IStorageFile file, ref string text);
         #endregion
 
     }

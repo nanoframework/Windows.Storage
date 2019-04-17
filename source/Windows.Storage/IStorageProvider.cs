@@ -7,6 +7,9 @@ using System;
 
 namespace Windows.Storage
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IStorageProvider
     {
     }
