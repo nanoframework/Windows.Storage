@@ -18,6 +18,7 @@ namespace Windows.Storage
 
         private const string s_RemovableStorageDevicesName = "Removable Storage Devices";
         private const string s_RemovableStorageDevicesDisplayType = "System Folder";
+        private const string s_InternalStorageDevicesName = "Internal Storage Devices";
 
         #endregion
 
@@ -105,14 +106,22 @@ namespace Windows.Storage
 
         internal StorageFolder(KnownFolderId folderId)
         {
-            // currently there is only support for removable devices
-            if (folderId != KnownFolderId.RemovableDevices)
+            // currently there is only support for removable devices 
+            // and internal storage devices
+            if (folderId == KnownFolderId.RemovableDevices)
+            {
+                _name = s_RemovableStorageDevicesName;
+            }
+            else if (folderId == KnownFolderId.InternalDevices)
+            {
+                _name = s_InternalStorageDevicesName;
+            }
+            else
             {
                 throw new NotSupportedException();
             }
 
             _knownFolderId = folderId;
-            _name = s_RemovableStorageDevicesName;
             _path = "";
         }
 
@@ -310,13 +319,17 @@ namespace Windows.Storage
         public StorageFolder[] GetFolders()
         {
             // is this a call for a known folder ID
-            // RemovableDevices
+            // RemovableDevices & InternalDevices
             // nothing else is implemented, no need to check as this doesn't get pass the constructor StorageFolder(KnownFolderId folderId)
             if (_knownFolderId == KnownFolderId.RemovableDevices)
             {
                 return GetRemovableStorageFoldersNative();
             }
-
+            else if (_knownFolderId == KnownFolderId.InternalDevices)
+            {
+                return GetInternalStorageFoldersNative();
+            }
+ 
             // regular get folders
             return GetStorageFoldersNative();
         }
@@ -400,6 +413,11 @@ namespace Windows.Storage
         [System.Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern StorageFolder[] GetRemovableStorageFoldersNative();
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern StorageFolder[] GetInternalStorageFoldersNative();
 
         [System.Diagnostics.DebuggerStepThrough]
         [System.Diagnostics.DebuggerHidden]

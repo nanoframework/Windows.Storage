@@ -28,6 +28,13 @@ namespace Windows.Storage
         /// </summary>
         public static StorageFolder RemovableDevices => new StorageFolder(KnownFolderId.RemovableDevices);
 
+
+        /// <summary>
+        /// Gets the internal devices folder.
+        /// </summary>
+        public static StorageFolder InternalDevices => new StorageFolder(KnownFolderId.InternalDevices);
+
+
         //public static StorageFolder SavedPictures { get; }
         //public static StorageFolder VideosLibrary { get; }
 

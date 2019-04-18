@@ -3,8 +3,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
-
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Windows.Storage
 {
@@ -160,6 +160,27 @@ namespace Windows.Storage
         //        public static IAsyncOperation<StorageFile> GetFileFromPathAsync(String path)
         //        { }
 
+        /// <summary>
+        /// Gets a StorageFile object to represent the file at the specified path.
+        /// </summary>
+        /// <param name="path">The path of the file to get a StorageFile to represent.</param>
+        /// <returns>Returns the file as a StorageFile.</returns>
+        ///<remarks>
+        ///
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFileFromPathAsync(String).
+        ///</remarks>
+        public static StorageFile GetFileFromPath(String path)
+        {
+            StorageFile file = new StorageFile();
+
+            CheckFileNative(path);
+
+            file._path = path;
+
+            return file;
+        }
+
         //        public IAsyncOperation<StorageFolder> GetParentAsync()
         //        { }
 
@@ -202,6 +223,7 @@ namespace Windows.Storage
         //        public IAsyncOperation<IRandomAccessStream> OpenAsync(FileAccessMode accessMode)
         //        { }
 
+
         //        public IAsyncOperation<IRandomAccessStream> OpenAsync(FileAccessMode accessMode, StorageOpenOptions options)
         //        { }
 
@@ -228,5 +250,12 @@ namespace Windows.Storage
 
         //        public static IAsyncOperation<StorageFile> ReplaceWithStreamedFileFromUriAsync(IStorageFile fileToReplace, Uri uri, IRandomAccessStreamReference thumbnail)
         //        { }
+
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private static extern void CheckFileNative(string filePath);
+
     }
 }
