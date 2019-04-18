@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-035...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-037...HEAD)
+
+**Implemented enhancements:**
+
+- Add Storage.Devices to support ESP32 mount operations [\#32](https://github.com/nanoframework/lib-Windows.Storage/pull/32)
+
+## [v1.0.0-preview-037](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-037) (2019-04-03)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-035...v1.0.0-preview-037)
 
 **Fixed bugs:**
 
