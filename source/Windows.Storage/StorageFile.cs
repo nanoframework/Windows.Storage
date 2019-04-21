@@ -145,9 +145,23 @@ namespace Windows.Storage
         //        public static IAsyncOperation<StorageFile> CreateStreamedFileFromUriAsync(String displayNameWithExtension, Uri uri, IRandomAccessStreamReference thumbnail)
         //        { }
 
-        //        public IAsyncAction DeleteAsync()
-        //        { }
-
+        /// <summary>
+        /// Delete the current file.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If the file doesn't exist this method will throw an exception.
+        /// </para>
+        /// <para>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be DeleteAsync().
+        /// </para>
+        /// </remarks>
+        public void Delete()
+        {
+            DeleteFileNative();
+        }        
+        
         //        public IAsyncAction DeleteAsync(StorageDeleteOption option)
         //        { }
 
@@ -239,8 +253,30 @@ namespace Windows.Storage
         //        public IAsyncOperation<StorageStreamTransaction> OpenTransactedWriteAsync(StorageOpenOptions options)
         //        { }
 
-        //        public IAsyncAction RenameAsync(String desiredName)
-        //        { }
+        /// <summary>
+        /// Renames the current file.
+        /// </summary>
+        /// <param name="desiredName">The desired new name of the current file.</param>
+        /// <remarks>
+        /// <para>
+        /// If the name you specify is invalid or already exists, this method throws an exception
+        /// </para>
+        /// <para>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be RenameAsync(String desiredName).
+        /// </para>
+        /// </remarks>
+        public void Rename(string desiredName)
+        {
+            // Construct path for new name
+            string desiredPath = _path.Substring(0, _path.Length - _name.Length) + desiredName;
+
+            RenameFileNative(desiredPath);
+
+            // No exception, so update file Path & name
+            _path = desiredPath;
+            _name = desiredName;
+        }
 
         //        public IAsyncAction RenameAsync(String desiredName, NameCollisionOption option)
         //        { }
@@ -256,6 +292,16 @@ namespace Windows.Storage
         [System.Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
         private static extern void CheckFileNative(string filePath);
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void DeleteFileNative();
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void RenameFileNative(String desiredName);
 
     }
 }
