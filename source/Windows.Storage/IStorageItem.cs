@@ -46,7 +46,12 @@ namespace Windows.Storage
 
         //        public bool IsOfType(StorageItemTypes type);
 
-        //        public IAsyncAction RenameAsync(String desiredName);
+
+        /// <summary>
+        /// Renames the current item.
+        /// </summary>
+        /// <param name="desiredName">The desired, new name of the item.</param>
+        void Rename(String desiredName);
 
         //        public IAsyncAction RenameAsync(String desiredName, NameCollisionOption option);
 

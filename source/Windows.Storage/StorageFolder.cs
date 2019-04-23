@@ -34,10 +34,10 @@ namespace Windows.Storage
         #pragma warning restore 0649
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
-        private readonly string _name;
+        private string _name;
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
-        private readonly string _path;
+        private string _path;
 
         #endregion
 
@@ -195,8 +195,10 @@ namespace Windows.Storage
         /// When this method completes, it returns a <see cref="StorageFolder"/> that represents the new subfolder.
         /// </returns>
         ///<remarks>
+        /// <para>
         /// This method is exclusive of nanoFramework and it's not available in the UWP API.
         /// The equivalent method would be CreateFolderAsync(String, CreationCollisionOption).
+        /// </para>
         ///</remarks>
         public StorageFolder CreateFolder(String desiredName, CreationCollisionOption options)
         {
@@ -218,8 +220,21 @@ namespace Windows.Storage
         //        public StorageItemQueryResult CreateItemQueryWithOptions(QueryOptions queryOptions)
         //        { }
 
-        //        public IAsyncAction DeleteAsync()
-        //        { }
+        /// <summary>
+        /// Delete the current folder.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If the folder doesn't exist then this method will throw an exception.
+        /// </para>
+        /// <para>This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be DeleteAsync().
+        /// </para>
+        /// </remarks>
+        public void Delete()
+        {
+            DeleteFolderNative();
+        }
 
         //        public IAsyncAction DeleteAsync(StorageDeleteOption option)
         //        { }
@@ -295,6 +310,27 @@ namespace Windows.Storage
 
             return GetStorageFilesNative(startIndex, maxItemsToRetrieve);
         }
+
+        /// <summary>
+        /// Gets the subfolder with the specified name from the current folder.
+        /// </summary>
+        /// <param name="name">The name (or path relative to the current folder) of the subfolder to get.</param>
+        /// <returns>
+        /// When this method completes successfully, it returns a StorageFolder that represents the specified subfolder.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// If the folder doesn't exist it will throw an exception.
+        /// </para>
+        /// <para>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFolderAsync(String name).
+        /// </para>
+        /// </remarks>
+        public StorageFolder GetFolder(String name)
+        {
+            return GetFolderNative(name);
+        } 
 
         //        public IAsyncOperation<StorageFolder> GetFolderAsync(String name)
         //        { }
@@ -395,8 +431,28 @@ namespace Windows.Storage
         //        public bool IsOfType(StorageItemTypes type)
         //        { }
 
-        //        public IAsyncAction RenameAsync(String desiredName)
-        //        { }
+        /// <summary>
+        /// Renames the current folder.
+        /// </summary>
+        /// <param name="desiredName">The desired, new name for the current folder.</param>
+        /// <remarks>
+        /// <para>If the name you specify is invalid or a folder with the same name already exists, 
+        /// this method throws an exception. If the target device doesn't support folders then this will also
+        /// throw an exception.</para>
+        /// <para>This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be RenameAsync(String desiredName).</para>
+        /// </remarks>
+        public void Rename(String desiredName)
+        {
+            // Create path to disired folder
+            string desiredPath = _path.Substring(0, _path.Length - _name.Length) + desiredName;
+
+            RenameFolderNative(desiredPath);
+
+            // No exception, so update folder Path & name
+            _path = desiredPath;
+            _name = desiredName;
+        }
 
         //        public IAsyncAction RenameAsync(String desiredName, NameCollisionOption option)
         //        { }
@@ -439,6 +495,20 @@ namespace Windows.Storage
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern StorageFolder CreateFolderNative(string desiredName, uint options);
 
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void DeleteFolderNative();
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void RenameFolderNative(String desiredPath);
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern StorageFolder GetFolderNative(String name);
         #endregion
 
     }
