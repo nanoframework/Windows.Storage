@@ -6,7 +6,12 @@
 
 **Implemented enhancements:**
 
+- Implement new methods in StorageFolder and StorageFile [\#33](https://github.com/nanoframework/lib-Windows.Storage/pull/33)
 - Add Storage.Devices to support ESP32 mount operations [\#32](https://github.com/nanoframework/lib-Windows.Storage/pull/32)
+
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#34](https://github.com/nanoframework/lib-Windows.Storage/pull/34)
 
 ## [v1.0.0-preview-037](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-037) (2019-04-03)
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-035...v1.0.0-preview-037)
