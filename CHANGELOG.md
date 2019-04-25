@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-048...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-049...HEAD)
+
+**Fixed bugs:**
+
+- Fix for GetFileFromPath, name not being set [\#36](https://github.com/nanoframework/lib-Windows.Storage/pull/36)
+
+## [v1.0.0-preview-049](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-049) (2019-04-24)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-048...v1.0.0-preview-049)
 
 **Documentation and other chores:**
 
