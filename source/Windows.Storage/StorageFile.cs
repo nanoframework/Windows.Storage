@@ -190,6 +190,13 @@ namespace Windows.Storage
 
             CheckFileNative(path);
 
+            // Find last separator before name
+            int li = path.LastIndexOf('\\');
+            if (li >= 0 && (li + 1) < path.Length)
+            {
+                file._name = path.Substring(li + 1);
+            }
+
             file._path = path;
 
             return file;
