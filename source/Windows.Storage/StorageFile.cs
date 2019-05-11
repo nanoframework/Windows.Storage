@@ -160,8 +160,8 @@ namespace Windows.Storage
         public void Delete()
         {
             DeleteFileNative();
-        }        
-        
+        }
+
         //        public IAsyncAction DeleteAsync(StorageDeleteOption option)
         //        { }
 
@@ -186,20 +186,11 @@ namespace Windows.Storage
         ///</remarks>
         public static StorageFile GetFileFromPath(String path)
         {
-            StorageFile file = new StorageFile();
+            // get file name from path
+            int nameStartIndex = path.LastIndexOf("\\");
+            string fileName = path.Substring(nameStartIndex + 1);
 
-            CheckFileNative(path);
-
-            // Find last separator before name
-            int li = path.LastIndexOf('\\');
-            if (li >= 0 && (li + 1) < path.Length)
-            {
-                file._name = path.Substring(li + 1);
-            }
-
-            file._path = path;
-
-            return file;
+            return GetFileFromPathNative(path, fileName);
         }
 
         //        public IAsyncOperation<StorageFolder> GetParentAsync()
@@ -294,11 +285,10 @@ namespace Windows.Storage
         //        public static IAsyncOperation<StorageFile> ReplaceWithStreamedFileFromUriAsync(IStorageFile fileToReplace, Uri uri, IRandomAccessStreamReference thumbnail)
         //        { }
 
-
         [System.Diagnostics.DebuggerStepThrough]
         [System.Diagnostics.DebuggerHidden]
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern void CheckFileNative(string filePath);
+        private extern static StorageFile GetFileFromPathNative(String path, String name);
 
         [System.Diagnostics.DebuggerStepThrough]
         [System.Diagnostics.DebuggerHidden]
