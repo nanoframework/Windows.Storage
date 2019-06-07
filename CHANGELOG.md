@@ -15,7 +15,6 @@
 **Documentation and other chores:**
 
 - Bumps nanoFramework.Runtime.Events from 1.0.5-preview-019 to 1.0.6-preview-001 [\#35](https://github.com/nanoframework/lib-Windows.Storage/pull/35)
-- Bumps nanoFramework.Windows.Storage.Streams from 1.0.5-preview-008 to 1.0.5-preview-009 [\#29](https://github.com/nanoframework/lib-Windows.Storage/pull/29)
 
 ## [v1.0.0-preview-048](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-048) (2019-04-23)
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-037...v1.0.0-preview-048)
@@ -54,6 +53,7 @@
 
 **Documentation and other chores:**
 
+- Bumps nanoFramework.Windows.Storage.Streams from 1.0.5-preview-008 to 1.0.5-preview-009 [\#29](https://github.com/nanoframework/lib-Windows.Storage/pull/29)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.5-preview-006 to 1.0.5-preview-008 [\#27](https://github.com/nanoframework/lib-Windows.Storage/pull/27)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.5-preview-004 to 1.0.5-preview-006 [\#26](https://github.com/nanoframework/lib-Windows.Storage/pull/26)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.4 to 1.0.5-preview-004 [\#25](https://github.com/nanoframework/lib-Windows.Storage/pull/25)
