@@ -9,6 +9,10 @@
 - Fix StorageFile.GetFileFromPath [\#37](https://github.com/nanoframework/lib-Windows.Storage/pull/37)
 - Fix for GetFileFromPath, name not being set [\#36](https://github.com/nanoframework/lib-Windows.Storage/pull/36)
 
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#43](https://github.com/nanoframework/lib-Windows.Storage/pull/43)
+
 ## [v1.0.0-preview-049](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-049) (2019-04-24)
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-048...v1.0.0-preview-049)
 
