@@ -46,6 +46,11 @@
     <Name>Windows.Storage</Name>
   </PropertyGroup>
   <ItemGroup>
+    <NFMDP_PE_ExcludeClassByName Include="ThisAssembly">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+  </ItemGroup>
+  <ItemGroup>
     <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.2.5-preview.1\lib\mscorlib.dll">
       <InProject>false</InProject>
     </NFMDP_PE_LoadHints>

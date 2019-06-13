@@ -40,6 +40,7 @@ namespace Windows.Storage
         {
             public void InitializeForEventSource()
             {
+                // nothing to initialize here
             }
 
             public BaseEvent ProcessEvent(uint data1, uint data2, DateTime time)
@@ -149,7 +150,9 @@ namespace Windows.Storage
                     return "F:";
 
                 default:
+#pragma warning disable S112 // General exceptions should never be thrown
                     throw new IndexOutOfRangeException();
+#pragma warning restore S112 // General exceptions should never be thrown
             }
         }
     }
