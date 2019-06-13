@@ -280,7 +280,9 @@ namespace Windows.Storage
             // check CommonFileQuery
             if(query != CommonFileQuery.DefaultQuery)
             {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
             return GetStorageFilesNative(0, UInt32.MaxValue);
@@ -305,12 +307,15 @@ namespace Windows.Storage
             // check CommonFileQuery
             if (query != CommonFileQuery.DefaultQuery)
             {
+#pragma warning disable S3928 // Parameter names used into ArgumentException constructors should match an existing one 
                 throw new ArgumentException();
+#pragma warning restore S3928 // Parameter names used into ArgumentException constructors should match an existing one 
             }
 
             return GetStorageFilesNative(startIndex, maxItemsToRetrieve);
         }
 
+#pragma warning disable S4200 // Native methods should be wrapped
         /// <summary>
         /// Gets the subfolder with the specified name from the current folder.
         /// </summary>
@@ -328,6 +333,7 @@ namespace Windows.Storage
         /// </para>
         /// </remarks>
         public StorageFolder GetFolder(String name)
+#pragma warning restore S4200 // Native methods should be wrapped
         {
             return GetFolderNative(name);
         } 
@@ -444,7 +450,7 @@ namespace Windows.Storage
         /// </remarks>
         public void Rename(String desiredName)
         {
-            // Create path to disired folder
+            // Create path to desired folder
             string desiredPath = _path.Substring(0, _path.Length - _name.Length) + desiredName;
 
             RenameFolderNative(desiredPath);
