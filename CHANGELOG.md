@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.12...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.14...HEAD)
+
+**Documentation and other chores:**
+
+- Work on native assembly declaration [\#48](https://github.com/nanoframework/lib-Windows.Storage/pull/48) [[Breaking-Change](https://github.com/nanoframework/lib-Windows.Storage/labels/Breaking-Change)]
+
+## [v1.0.1-preview.14](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.1-preview.14) (2019-06-20)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.12...v1.0.1-preview.14)
 
 **Documentation and other chores:**
 
@@ -63,10 +70,6 @@
 ## [v1.0.0-preview-037](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-037) (2019-04-03)
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-035...v1.0.0-preview-037)
 
-**Fixed bugs:**
-
-- Add missing dependency in nuspec [\#31](https://github.com/nanoframework/lib-Windows.Storage/pull/31)
-
 ## [v1.0.0-preview-035](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0-preview-035) (2019-04-03)
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.0-preview-033...v1.0.0-preview-035)
 
@@ -82,6 +85,10 @@
 - Work on FileIO class [\#28](https://github.com/nanoframework/lib-Windows.Storage/pull/28)
 - Add support for creating folders and files [\#24](https://github.com/nanoframework/lib-Windows.Storage/pull/24)
 - Work on StorageFolder and StorageFile [\#23](https://github.com/nanoframework/lib-Windows.Storage/pull/23)
+
+**Fixed bugs:**
+
+- Add missing dependency in nuspec [\#31](https://github.com/nanoframework/lib-Windows.Storage/pull/31)
 
 **Documentation and other chores:**
 
