@@ -7,19 +7,20 @@
     <authors>nanoFramework project contributors</authors>
     <owners>nanoFramework project contributors</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>
-    </releaseNotes>
+    <license type="expression">Apache-2.0</license>
+    <releaseNotes></releaseNotes>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework/lib-Windows.Storage</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
+    <repository type="git" url="https://github.com/nanoframework/lib-nanoFramework.Windows.Storage" commit="$commit$" />
     <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>
-    <description>This package includes the nanoFramework.Windows.Storage assembly for nanoFramework C# projects.</description>
+    <description>This package includes the nanoFramework.Windows.Storage assembly for nanoFramework C# projects.&#10;This package requires a target with nanoFramework.Windows.Storage v$nativeVersion$.</description>
     <summary>nanoFramework.Windows.Storage assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf nanoFramework.Windows.Storage</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="[1.2.6-preview.1]" />
-      <dependency id="nanoFramework.Windows.Storage.Streams" version="[1.0.7-preview.10]" />
-      <dependency id="nanoFramework.Runtime.Events" version="[1.0.8-preview.8]" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.2.6-preview.1" />
+      <dependency id="nanoFramework.Windows.Storage.Streams" version="1.0.7-preview.10" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.0.8-preview.8" />
     </dependencies>
   </metadata>
   <files>
@@ -28,5 +29,8 @@
     <file src="Windows.Storage\bin\Release\Windows.Storage.pdbx" target="lib\Windows.Storage.pdbx" />
     <file src="Windows.Storage\bin\Release\Windows.Storage.pe" target="lib\Windows.Storage.pe" />
     <file src="Windows.Storage\bin\Release\Windows.Storage.xml" target="lib\Windows.Storage.xml" />
+
+    <!-- readme -->
+    <file src="readme.txt" target="readme.txt" />
   </files>
 </package>
