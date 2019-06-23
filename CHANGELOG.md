@@ -6,6 +6,7 @@
 
 **Documentation and other chores:**
 
+- Update 3 NuGet dependencies [\#50](https://github.com/nanoframework/lib-Windows.Storage/pull/50)
 - Work on native assembly declaration [\#48](https://github.com/nanoframework/lib-Windows.Storage/pull/48) [[Breaking-Change](https://github.com/nanoframework/lib-Windows.Storage/labels/Breaking-Change)]
 
 ## [v1.0.1-preview.14](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.1-preview.14) (2019-06-20)
