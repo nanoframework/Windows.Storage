@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.14...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.20...HEAD)
+
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#52](https://github.com/nanoframework/lib-Windows.Storage/pull/52)
+- Update readme.txt [\#51](https://github.com/nanoframework/lib-Windows.Storage/pull/51)
+
+## [v1.0.1-preview.20](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.1-preview.20) (2019-06-23)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.14...v1.0.1-preview.20)
 
 **Documentation and other chores:**
 
