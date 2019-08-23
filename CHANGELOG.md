@@ -1,5 +1,13 @@
 # Change Log
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.23...HEAD)
+
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#53](https://github.com/nanoframework/lib-Windows.Storage/pull/53)
+
 ## [v1.0.1-preview.23](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.1-preview.23) (2019-07-18)
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.20...v1.0.1-preview.23)
 
