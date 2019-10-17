@@ -12,9 +12,21 @@ namespace Windows.Storage
     /// </summary>
     public interface IStorageItem
     {
-        //        public FileAttributes Attributes { get; }
+        /// <summary>
+        /// Gets the attributes of a file.
+        /// </summary>
+        /// <value>
+        /// The file attributes.
+        /// </value>
+        FileAttributes Attributes { get; }
 
-        //        public DateTimeOffset DateCreated { get; }
+        /// <summary>
+        /// Gets the date and time that the current folder was created.
+        /// </summary>
+        /// <remarks>
+        /// This is the nanoFrameowrk equivalent of UWP DateCreated of type DateTimeOffset.
+        /// </remarks>
+        DateTime DateCreated { get; }
 
         /// <summary>
         /// Gets the name of the item including the file name extension if there is one.
@@ -34,7 +46,12 @@ namespace Windows.Storage
 
         //        public bool IsOfType(StorageItemTypes type);
 
-        //        public IAsyncAction RenameAsync(String desiredName);
+
+        /// <summary>
+        /// Renames the current item.
+        /// </summary>
+        /// <param name="desiredName">The desired, new name of the item.</param>
+        void Rename(String desiredName);
 
         //        public IAsyncAction RenameAsync(String desiredName, NameCollisionOption option);
 

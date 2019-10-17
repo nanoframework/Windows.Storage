@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Windows.Storage
 {
@@ -12,37 +13,115 @@ namespace Windows.Storage
     /// </summary>
     public sealed class StorageFile : IStorageFile//, IStorageFile2, IStorageFilePropertiesWithAvailability, IStorageItem, IStorageItem2, IStorageItemProperties, IStorageItemProperties2, IStorageItemPropertiesWithProvider, IInputStreamReference, IRandomAccessStreamReference
     {
-        //        public FileAttributes Attributes { get; }
+        #region backing and internal fields
+
+#pragma warning disable 0649
+
+        // this field is set in native code
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private readonly DateTime _dateCreated;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _name;
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        private string _path;
+
+#pragma warning restore 0649
+
+        #endregion
+
+        /// <summary>
+        /// Gets the attributes of a file.
+        /// </summary>
+        /// <value>
+        /// The file attributes.
+        /// </value>
+        public FileAttributes Attributes => FileAttributes.Normal;
 
         /// <summary>
         /// Gets the MIME type of the contents of the file.
         /// </summary>
-        public string ContentType { get; }
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string ContentType => "";
 
-        //        public DateTimeOffset DateCreated { get; }
+        /// <summary>
+        /// Gets the date and time that the current folder was created.
+        /// </summary>
+        /// <remarks>
+        /// This is the nanoFrameowrk equivalent of UWP DateCreated of type DateTimeOffset.
+        /// </remarks>
+        public DateTime DateCreated => _dateCreated;
 
-        //        public string DisplayName { get; }
+        /// <summary>
+        /// Gets the user-friendly name of the current folder.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string DisplayName => "";
 
-        //        public string DisplayType { get; }
+        /// <summary>
+        /// Gets the user-friendly description of the type of the folder; for example, JPEG image.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string DisplayType => "";
 
         /// <summary>
         /// Gets the type (file name extension) of the file.
         /// </summary>
-        public string FileType { get; }
+        public string FileType
+        {
+            get
+            {
+                if(_name != null)
+                {
+                    var dotIndex = _name.LastIndexOf('.');
 
-        //        public string FolderRelativeId { get; }
+                    return _name.Substring(dotIndex + 1, _name.Length - dotIndex - 1);
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
 
-        //        public bool IsAvailable { get; }
+        /// <summary>
+        /// Gets an identifier for the file. This ID is unique for the query result or <see cref="StorageFolder"/> that contains the file and can be used to distinguish between items that have the same name.
+        /// </summary>
+        ///<remarks>
+        /// This property is not available in nanoFramework.
+        ///</remarks>
+        public string FolderRelativeId => "";
+
+        /// <summary>
+        /// Indicates if the file is local, is cached locally, or can be downloaded.
+        /// </summary>
+        /// <value>
+        /// True if the file is local, is cached locally, or can be downloaded. Otherwise, false.
+        /// </value>
+        ///<remarks>
+        /// This property is always true in nanoFramework.
+        ///</remarks>
+        public bool IsAvailable => true;
 
         /// <summary>
         /// Gets the name of the file including the file name extension.
         /// </summary>
-        public string Name { get; }
+        /// <value>
+        /// The name of the file including the file name extension.
+        /// </value>
+        public string Name => _name;
 
         /// <summary>
         /// Gets the full file-system path of the current file, if the file has a path.
         /// </summary>
-        public string Path { get; }
+        public string Path => _path;
 
         //        public StorageItemContentProperties Properties { get; }
 
@@ -66,8 +145,22 @@ namespace Windows.Storage
         //        public static IAsyncOperation<StorageFile> CreateStreamedFileFromUriAsync(String displayNameWithExtension, Uri uri, IRandomAccessStreamReference thumbnail)
         //        { }
 
-        //        public IAsyncAction DeleteAsync()
-        //        { }
+        /// <summary>
+        /// Delete the current file.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If the file doesn't exist this method will throw an exception.
+        /// </para>
+        /// <para>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be DeleteAsync().
+        /// </para>
+        /// </remarks>
+        public void Delete()
+        {
+            DeleteFileNative();
+        }
 
         //        public IAsyncAction DeleteAsync(StorageDeleteOption option)
         //        { }
@@ -80,6 +173,25 @@ namespace Windows.Storage
 
         //        public static IAsyncOperation<StorageFile> GetFileFromPathAsync(String path)
         //        { }
+
+        /// <summary>
+        /// Gets a StorageFile object to represent the file at the specified path.
+        /// </summary>
+        /// <param name="path">The path of the file to get a StorageFile to represent.</param>
+        /// <returns>Returns the file as a StorageFile.</returns>
+        ///<remarks>
+        ///
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be GetFileFromPathAsync(String).
+        ///</remarks>
+        public static StorageFile GetFileFromPath(String path)
+        {
+            // get file name from path
+            int nameStartIndex = path.LastIndexOf("\\");
+            string fileName = path.Substring(nameStartIndex + 1);
+
+            return GetFileFromPathNative(path, fileName);
+        }
 
         //        public IAsyncOperation<StorageFolder> GetParentAsync()
         //        { }
@@ -123,6 +235,7 @@ namespace Windows.Storage
         //        public IAsyncOperation<IRandomAccessStream> OpenAsync(FileAccessMode accessMode)
         //        { }
 
+
         //        public IAsyncOperation<IRandomAccessStream> OpenAsync(FileAccessMode accessMode, StorageOpenOptions options)
         //        { }
 
@@ -138,8 +251,30 @@ namespace Windows.Storage
         //        public IAsyncOperation<StorageStreamTransaction> OpenTransactedWriteAsync(StorageOpenOptions options)
         //        { }
 
-        //        public IAsyncAction RenameAsync(String desiredName)
-        //        { }
+        /// <summary>
+        /// Renames the current file.
+        /// </summary>
+        /// <param name="desiredName">The desired new name of the current file.</param>
+        /// <remarks>
+        /// <para>
+        /// If the name you specify is invalid or already exists, this method throws an exception
+        /// </para>
+        /// <para>
+        /// This method is exclusive of nanoFramework and it's not available in the UWP API.
+        /// The equivalent method would be RenameAsync(String desiredName).
+        /// </para>
+        /// </remarks>
+        public void Rename(string desiredName)
+        {
+            // Construct path for new name
+            string desiredPath = _path.Substring(0, _path.Length - _name.Length) + desiredName;
+
+            RenameFileNative(desiredPath);
+
+            // No exception, so update file Path & name
+            _path = desiredPath;
+            _name = desiredName;
+        }
 
         //        public IAsyncAction RenameAsync(String desiredName, NameCollisionOption option)
         //        { }
@@ -149,5 +284,21 @@ namespace Windows.Storage
 
         //        public static IAsyncOperation<StorageFile> ReplaceWithStreamedFileFromUriAsync(IStorageFile fileToReplace, Uri uri, IRandomAccessStreamReference thumbnail)
         //        { }
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern static StorageFile GetFileFromPathNative(String path, String name);
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void DeleteFileNative();
+
+        [System.Diagnostics.DebuggerStepThrough]
+        [System.Diagnostics.DebuggerHidden]
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void RenameFileNative(String desiredName);
+
     }
 }

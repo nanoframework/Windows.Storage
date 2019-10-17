@@ -75,5 +75,11 @@ namespace Windows.Storage
         ///// Videos library folder.
         ///// </summary>
         //VideosLibrary = 13
+
+        /// <summary>
+        /// Internal devices.
+        /// </summary>
+        InternalDevices = 14
+
     }
 }

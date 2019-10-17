@@ -5,16 +5,6 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Windows.Storage", "Windows.Storage\Windows.Storage.nfproj", "{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}"
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Storage", "Nuget.Windows.Storage\Nuget.Windows.Storage.nuproj", "{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74} = {4AA106B9-7837-4A19-9EBC-DF2A1E164F74}
-	EndProjectSection
-EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Storage.DELIVERABLES", "Nuget.Windows.Storage.DELIVERABLES\Nuget.Windows.Storage.DELIVERABLES.nuproj", "{8D8B5AF4-165A-4070-968D-6A2C58A35273}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74} = {4AA106B9-7837-4A19-9EBC-DF2A1E164F74}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,18 +13,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AA106B9-7837-4A19-9EBC-DF2A1E164F74}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B4C7973-9A32-4D6D-82B1-A166FA4B89E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D8B5AF4-165A-4070-968D-6A2C58A35273}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
