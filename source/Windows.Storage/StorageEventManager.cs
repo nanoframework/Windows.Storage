@@ -48,7 +48,7 @@ namespace Windows.Storage
                 StorageEvent storageEvent = new StorageEvent
                 {
                     EventType = (StorageEventType)((data1 >> 16) & 0xFF),
-                    DriveIndex = (byte)(data1 & 0xFF),
+                    DriveIndex = (byte)(data2 & 0xFF),
                     Time = time
                 };
 
