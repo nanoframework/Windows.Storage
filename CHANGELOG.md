@@ -314,6 +314,9 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.23...v1.0.1-preview.28)
 
+## [v1.0.0](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0) (2018-10-17)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.0.1-preview.23...HEAD)
+
 **Documentation and other chores:**
 
 - Update 3 NuGet dependencies [\#53](https://github.com/nanoframework/lib-Windows.Storage/pull/53)
