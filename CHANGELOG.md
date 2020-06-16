@@ -2,6 +2,22 @@
 
 ## [v1.4.1-preview.2](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.1-preview.2) (2020-06-16)
 
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.0...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.System.Text from 1.0.0 to 1.1.0 [\#131](https://github.com/nanoframework/lib-Windows.Storage/pull/131)
+
+## [v1.4.0](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.0) (2020-06-16)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.1-preview.2...v1.4.0)
+
+**Documentation and other chores:**
+
+- Release release-v1.4.0 [\#130](https://github.com/nanoframework/lib-Windows.Storage/pull/130)
+
+## [v1.4.1-preview.2](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.1-preview.2) (2020-06-16)
+
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.0-preview.5...v1.4.1-preview.2)
 
 ## [v1.4.0-preview.5](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.0-preview.5) (2020-06-16)
