@@ -1,6 +1,6 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
+## [v1.4.1-preview.2](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.1-preview.2) (2020-06-16)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.0...HEAD)
 
