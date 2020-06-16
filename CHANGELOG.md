@@ -1,8 +1,8 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
+## [v1.4.0-preview.5](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.0-preview.5) (2020-06-16)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.3.0...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.3.0...v1.4.0-preview.5)
 
 **Documentation and other chores:**
 
@@ -237,17 +237,13 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.2.0-preview.5...v1.2.0-preview.6)
 
-**Documentation and other chores:**
-
-- Bumps nanoFramework.Runtime.Events from 1.4.1-preview.1 to 1.4.1-preview.2 [\#74](https://github.com/nanoframework/lib-Windows.Storage/pull/74)
-- Update 2 NuGet dependencies [\#61](https://github.com/nanoframework/lib-Windows.Storage/pull/61)
-
 ## [v1.2.0-preview.5](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.2.0-preview.5) (2019-11-04)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.2.0-preview.4...v1.2.0-preview.5)
 
 **Documentation and other chores:**
 
+- Bumps nanoFramework.Runtime.Events from 1.4.1-preview.1 to 1.4.1-preview.2 [\#74](https://github.com/nanoframework/lib-Windows.Storage/pull/74)
 - Update 3 NuGet dependencies [\#73](https://github.com/nanoframework/lib-Windows.Storage/pull/73)
 
 ## [v1.2.0-preview.4](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.2.0-preview.4) (2019-10-23)
@@ -282,6 +278,10 @@
 ## [v1.1.0-preview.7](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.1.0-preview.7) (2019-10-15)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.1.0-preview.6...v1.1.0-preview.7)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#61](https://github.com/nanoframework/lib-Windows.Storage/pull/61)
 
 ## [v1.1.0-preview.6](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.1.0-preview.6) (2019-10-15)
 
