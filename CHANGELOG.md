@@ -2,7 +2,24 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.2...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.3-preview.2...HEAD)
+
+**Documentation and other chores:**
+
+- Update dependencies [\#139](https://github.com/nanoframework/lib-Windows.Storage/pull/139)
+
+## [v1.4.3-preview.2](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.3-preview.2) (2020-09-19)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.3-preview.3...v1.4.3-preview.2)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#138](https://github.com/nanoframework/lib-Windows.Storage/pull/138)
+- Bumps nanoFramework.Runtime.Events from 1.8.1-alpha.18 to 1.8.1-preview.22 [\#137](https://github.com/nanoframework/lib-Windows.Storage/pull/137)
+
+## [v1.4.3-preview.3](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.3-preview.3) (2020-07-01)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.2...v1.4.3-preview.3)
 
 **Documentation and other chores:**
 
@@ -451,7 +468,6 @@
 **Fixed bugs:**
 
 - Fix StorageFile.GetFileFromPath [\#37](https://github.com/nanoframework/lib-Windows.Storage/pull/37)
-- Fix for GetFileFromPath, name not being set [\#36](https://github.com/nanoframework/lib-Windows.Storage/pull/36)
 
 **Documentation and other chores:**
 
@@ -473,6 +489,10 @@
 
 - Implement new methods in StorageFolder and StorageFile [\#33](https://github.com/nanoframework/lib-Windows.Storage/pull/33)
 - Add Storage.Devices to support ESP32 mount operations [\#32](https://github.com/nanoframework/lib-Windows.Storage/pull/32)
+
+**Fixed bugs:**
+
+- Fix for GetFileFromPath, name not being set [\#36](https://github.com/nanoframework/lib-Windows.Storage/pull/36)
 
 **Documentation and other chores:**
 
