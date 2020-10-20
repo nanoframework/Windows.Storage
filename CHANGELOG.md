@@ -2,7 +2,24 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.13...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.17...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.Windows.Storage.Streams from 1.10.1-preview.10 to 1.10.1-preview.12 [\#150](https://github.com/nanoframework/lib-Windows.Storage/pull/150)
+- Update 3 NuGet dependencies [\#149](https://github.com/nanoframework/lib-Windows.Storage/pull/149)
+
+## [v1.4.4-preview.17](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.4-preview.17) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.15...v1.4.4-preview.17)
+
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#148](https://github.com/nanoframework/lib-Windows.Storage/pull/148)
+
+## [v1.4.4-preview.15](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.4-preview.15) (2020-10-01)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.13...v1.4.4-preview.15)
 
 **Documentation and other chores:**
 
@@ -138,16 +155,13 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.3.0...v1.4.0-preview.5)
 
-**Documentation and other chores:**
-
-- Bumps nanoFramework.Runtime.Events from 1.4.2 to 1.8.0 [\#129](https://github.com/nanoframework/lib-Windows.Storage/pull/129)
-
 ## [v1.3.0](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.3.0) (2020-06-12)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.3.0-preview.3...v1.3.0)
 
 **Documentation and other chores:**
 
+- Bumps nanoFramework.Runtime.Events from 1.4.2 to 1.8.0 [\#129](https://github.com/nanoframework/lib-Windows.Storage/pull/129)
 - Release release-v1.3.0 [\#128](https://github.com/nanoframework/lib-Windows.Storage/pull/128)
 
 ## [v1.3.0-preview.3](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.3.0-preview.3) (2020-06-12)
