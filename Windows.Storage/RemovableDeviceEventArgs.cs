@@ -3,7 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Runtime.Events;
+using System;
 
 namespace Windows.Storage
 {
