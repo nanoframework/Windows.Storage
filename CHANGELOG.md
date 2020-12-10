@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.27...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.29...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.Runtime.Events from 1.8.2-preview.13 to 1.9.0-preview.2 [\#159](https://github.com/nanoframework/lib-Windows.Storage/pull/159)
+
+## [v1.4.4-preview.29](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.4-preview.29) (2020-12-07)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.27...v1.4.4-preview.29)
 
 **Documentation and other chores:**
 
@@ -217,7 +225,6 @@
 
 - Bumps nanoFramework.Windows.Storage.Streams from 1.9.0-preview.4 to 1.9.0 [\#127](https://github.com/nanoframework/lib-Windows.Storage/pull/127)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.9.0-preview.3 to 1.9.0-preview.4 [\#124](https://github.com/nanoframework/lib-Windows.Storage/pull/124)
-- Bumps nanoFramework.Windows.Storage.Streams from 1.9.0-preview.3 to 1.9.0-preview.4 [\#123](https://github.com/nanoframework/lib-Windows.Storage/pull/123)
 
 ## [v1.2.0-preview.46](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.2.0-preview.46) (2020-06-12)
 
@@ -233,6 +240,7 @@
 
 **Documentation and other chores:**
 
+- Bumps nanoFramework.Windows.Storage.Streams from 1.9.0-preview.3 to 1.9.0-preview.4 [\#123](https://github.com/nanoframework/lib-Windows.Storage/pull/123)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.8.2 to 1.9.0-preview.3 [\#121](https://github.com/nanoframework/lib-Windows.Storage/pull/121)
 - Update 3 NuGet dependencies [\#120](https://github.com/nanoframework/lib-Windows.Storage/pull/120)
 - Update 3 NuGet dependencies [\#119](https://github.com/nanoframework/lib-Windows.Storage/pull/119)
@@ -438,10 +446,6 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.2.0-preview.4...v1.2.0-preview.5)
 
-**Documentation and other chores:**
-
-- Update 3 NuGet dependencies [\#73](https://github.com/nanoframework/lib-Windows.Storage/pull/73)
-
 ## [v1.2.0-preview.4](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.2.0-preview.4) (2019-10-23)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.2.0-preview.3...v1.2.0-preview.4)
@@ -509,6 +513,7 @@
 
 **Documentation and other chores:**
 
+- Update 3 NuGet dependencies [\#73](https://github.com/nanoframework/lib-Windows.Storage/pull/73)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.7-preview.27 to 1.2.0 [\#56](https://github.com/nanoframework/lib-Windows.Storage/pull/56)
 
 ## [v1.0.1-preview.30](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.1-preview.30) (2019-09-30)
@@ -643,6 +648,7 @@
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.5-preview-006 to 1.0.5-preview-008 [\#27](https://github.com/nanoframework/lib-Windows.Storage/pull/27)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.5-preview-004 to 1.0.5-preview-006 [\#26](https://github.com/nanoframework/lib-Windows.Storage/pull/26)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.4 to 1.0.5-preview-004 [\#25](https://github.com/nanoframework/lib-Windows.Storage/pull/25)
+- Update 2 NuGet dependencies [\#22](https://github.com/nanoframework/lib-Windows.Storage/pull/22)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.0.0 to 1.0.2-preview-006 [\#19](https://github.com/nanoframework/lib-Windows.Storage/pull/19)
 
 ## [v1.0.0](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.0) (2018-10-17)
@@ -651,7 +657,6 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#22](https://github.com/nanoframework/lib-Windows.Storage/pull/22)
 - Update 2 NuGet dependencies [\#14](https://github.com/nanoframework/lib-Windows.Storage/pull/14)
 - Update 2 NuGet dependencies [\#12](https://github.com/nanoframework/lib-Windows.Storage/pull/12)
 - Update 2 NuGet dependencies [\#11](https://github.com/nanoframework/lib-Windows.Storage/pull/11)
