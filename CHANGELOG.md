@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.43...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.45...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.System.Text from 1.1.1-preview.29 to 1.1.1-preview.33 [\#170](https://github.com/nanoframework/lib-Windows.Storage/pull/170)
+
+## [v1.4.4-preview.45](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.4-preview.45) (2021-03-02)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.43...v1.4.4-preview.45)
 
 **Documentation and other chores:**
 
