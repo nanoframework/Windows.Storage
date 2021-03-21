@@ -2,7 +2,24 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.47...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.51...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.Windows.Storage.Streams from 1.10.1-preview.26 to 1.10.1-preview.28 [\#174](https://github.com/nanoframework/lib-Windows.Storage/pull/174)
+- Update 3 NuGet dependencies [\#173](https://github.com/nanoframework/lib-Windows.Storage/pull/173)
+
+## [v1.4.4-preview.51](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.4-preview.51) (2021-03-21)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.49...v1.4.4-preview.51)
+
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#172](https://github.com/nanoframework/lib-Windows.Storage/pull/172)
+
+## [v1.4.4-preview.49](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.4-preview.49) (2021-03-17)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.47...v1.4.4-preview.49)
 
 **Documentation and other chores:**
 
