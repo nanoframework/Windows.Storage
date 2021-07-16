@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
+  </PropertyGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>4aa106b9-7837-4a19-9ebc-df2a1e164f74</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Windows.Storage</AssemblyName>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
+    <DocumentationFile>bin\$(Configuration)\Windows.Storage.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NFMDP_STUB_Verbose>true</NFMDP_STUB_Verbose>
+    <NF_GenerateStubsDirectory>bin\$(Configuration)\Stubs</NF_GenerateStubsDirectory>
+    <NF_GenerateSkeletonProjectName>win_storage_native</NF_GenerateSkeletonProjectName>
+    <Name>Windows.Storage</Name>
+  </PropertyGroup>
+  <ItemGroup>
+    <NFMDP_PE_ExcludeClassByName Include="ThisAssembly">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+  </ItemGroup>
+  <ItemGroup>
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.10.5\lib\mscorlib.dll">
+      <InProject>false</InProject>
+    </NFMDP_PE_LoadHints>
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Windows.Storage.Streams.1.12.2\lib\Windows.Storage.Streams.dll">
+      <InProject>false</InProject>
+    </NFMDP_PE_LoadHints>
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Runtime.Events.1.9.1\lib\nanoFramework.Runtime.Events.dll">
+      <InProject>false</InProject>
+    </NFMDP_PE_LoadHints>
+  </ItemGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
+  <ItemGroup>
+    <Compile Include="AppDataPaths.cs" />
+    <Compile Include="ApplicationData.cs" />
+    <Compile Include="ApplicationDataCompositeValue.cs" />
+    <Compile Include="ApplicationDataContainer.cs" />
+    <Compile Include="ApplicationDataContainerSettings.cs" />
+    <Compile Include="ApplicationDataCreateDisposition.cs" />
+    <Compile Include="ApplicationDataLocality.cs" />
+    <Compile Include="ApplicationDataSetVersionHandler.cs" />
+    <Compile Include="CachedFileManager.cs" />
+    <Compile Include="CreationCollisionOption.cs" />
+    <Compile Include="DownloadsFolder.cs" />
+    <Compile Include="FileAccessMode.cs" />
+    <Compile Include="FileAttributes.cs" />
+    <Compile Include="FileIO.cs" />
+    <Compile Include="IStorageFile.cs" />
+    <Compile Include="IStorageFile2.cs" />
+    <Compile Include="IStorageFilePropertiesWithAvailability.cs" />
+    <Compile Include="IStorageFolder.cs" />
+    <Compile Include="IStorageFolder2.cs" />
+    <Compile Include="IStorageItem.cs" />
+    <Compile Include="IStorageItem2.cs" />
+    <Compile Include="IStorageItemProperties.cs" />
+    <Compile Include="IStorageItemProperties2.cs" />
+    <Compile Include="IStorageItemPropertiesWithProvider.cs" />
+    <Compile Include="IStorageProvider.cs" />
+    <Compile Include="IStreamedFileDataRequest.cs" />
+    <Compile Include="KnownFolderId.cs" />
+    <Compile Include="KnownFolders.cs" />
+    <Compile Include="KnownLibraryId.cs" />
+    <Compile Include="NameCollisionOption.cs" />
+    <Compile Include="PathIO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search\CommonFileQuery.cs" />
+    <Compile Include="SetVersionDeferral.cs" />
+    <Compile Include="SetVersionRequest.cs" />
+    <Compile Include="StorageDeleteOption.cs" />
+    <Compile Include="StorageDevices.cs" />
+    <Compile Include="StorageEventManager.cs" />
+    <Compile Include="RemovableDeviceEventArgs.cs" />
+    <Compile Include="StorageFile.cs" />
+    <Compile Include="StorageFolder.cs" />
+    <Compile Include="StorageItemTypes.cs" />
+    <Compile Include="StorageLibrary.cs" />
+    <Compile Include="StorageLibraryChange.cs" />
+    <Compile Include="StorageLibraryChangeReader.cs" />
+    <Compile Include="StorageLibraryChangeTracker.cs" />
+    <Compile Include="StorageLibraryChangeType.cs" />
+    <Compile Include="StorageOpenOptions.cs" />
+    <Compile Include="StorageProvider.cs" />
+    <Compile Include="StorageStreamTransaction.cs" />
+    <Compile Include="StreamedFileDataRequest.cs" />
+    <Compile Include="StreamedFileDataRequestedHandler.cs" />
+    <Compile Include="StreamedFileFailureMode.cs" />
+    <Compile Include="SystemAudioProperties.cs" />
+    <Compile Include="SystemDataPaths.cs" />
+    <Compile Include="SystemGPSProperties.cs" />
+    <Compile Include="SystemImageProperties.cs" />
+    <Compile Include="SystemMediaProperties.cs" />
+    <Compile Include="SystemMusicProperties.cs" />
+    <Compile Include="SystemPhotoProperties.cs" />
+    <Compile Include="SystemProperties.cs" />
+    <Compile Include="SystemVideoProperties.cs" />
+    <Compile Include="UserDataPaths.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib, Version=1.10.5.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.10.5\lib\mscorlib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.9.1.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.9.1\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.System.Text, Version=1.1.1.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Text.1.1.1\lib\nanoFramework.System.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Windows.Storage.Streams, Version=1.12.2.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Windows.Storage.Streams.1.12.2\lib\Windows.Storage.Streams.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
+  <ProjectExtensions>
+    <ProjectCapabilities>
+      <ProjectConfigurationsDeclaredAsItems />
+    </ProjectCapabilities>
+  </ProjectExtensions>
+  <Import Project="..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets'))" />
+  </Target>
+</Project>
