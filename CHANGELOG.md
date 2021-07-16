@@ -1,6 +1,6 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Storage/tree/HEAD)
+## [v1.4.2-preview.5](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.4.2-preview.5) (2020-06-17)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.4.4-preview.51...HEAD)
 
@@ -316,10 +316,6 @@
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.2.0-preview.44...v1.2.0-preview.46)
 
-**Documentation and other chores:**
-
-- Update 2 NuGet dependencies [\#122](https://github.com/nanoframework/lib-Windows.Storage/pull/122)
-
 ## [v1.2.0-preview.44](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.2.0-preview.44) (2020-06-11)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Storage/compare/v1.2.0-preview.39...v1.2.0-preview.44)
@@ -337,6 +333,7 @@
 
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#122](https://github.com/nanoframework/lib-Windows.Storage/pull/122)
 - Bumps nanoFramework.Windows.Storage.Streams from 1.8.2-preview.6 to 1.8.2-preview.7 [\#117](https://github.com/nanoframework/lib-Windows.Storage/pull/117)
 
 ## [v1.2.0-preview.38](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.2.0-preview.38) (2020-05-31)
@@ -628,6 +625,7 @@
 
 - Update 3 NuGet dependencies [\#52](https://github.com/nanoframework/lib-Windows.Storage/pull/52)
 - Update readme.txt [\#51](https://github.com/nanoframework/lib-Windows.Storage/pull/51)
+- Work on native assembly declaration [\#48](https://github.com/nanoframework/lib-Windows.Storage/pull/48)
 
 ## [v1.0.1-preview.20](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.1-preview.20) (2019-06-23)
 
@@ -636,7 +634,6 @@
 **Documentation and other chores:**
 
 - Update 3 NuGet dependencies [\#50](https://github.com/nanoframework/lib-Windows.Storage/pull/50)
-- Work on native assembly declaration [\#48](https://github.com/nanoframework/lib-Windows.Storage/pull/48)
 
 ## [v1.0.1-preview.14](https://github.com/nanoframework/lib-Windows.Storage/tree/v1.0.1-preview.14) (2019-06-20)
 
