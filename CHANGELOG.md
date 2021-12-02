@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.4.5-preview.20...HEAD)
+[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.4.5-preview.22...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.Runtime.Events from 1.9.2-preview.14 to 1.9.2 [\#228](https://github.com/nanoframework/Windows.Storage/pull/228)
+
+## [v1.4.5-preview.22](https://github.com/nanoframework/Windows.Storage/tree/v1.4.5-preview.22) (2021-12-02)
+
+[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.4.5-preview.20...v1.4.5-preview.22)
 
 **Documentation and other chores:**
 
