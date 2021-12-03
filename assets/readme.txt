@@ -6,7 +6,7 @@
                                                                                
 ===================================================================================
 
-API docs: https://docs.nanoframework.net/api/nanoFramework.Windows.Storage.html
+API docs: https://docs.nanoframework.net/api/Windows.Storage.html
 
 Browse our samples repository: https://github.com/nanoframework/samples
 
