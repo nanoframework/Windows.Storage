@@ -4,8 +4,7 @@
     <id>nanoFramework.Windows.Storage.DELIVERABLES</id>
     <version>$version$</version>
     <title>nanoFramework.Windows.Storage.DELIVERABLES</title>
-    <authors>nanoFramework project contributors</authors>
-    <owners>nanoframework,dotnetfoundation</owners>
+    <authors>nanoframework</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
     <releaseNotes>
