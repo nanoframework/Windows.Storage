@@ -2,7 +2,24 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.4.6-preview.36...HEAD)
+[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.4.6-preview.40...HEAD)
+
+**Documentation and other chores:**
+
+- Update 1 NuGet dependencies [\#261](https://github.com/nanoframework/Windows.Storage/pull/261)
+- Update 3 NuGet dependencies [\#260](https://github.com/nanoframework/Windows.Storage/pull/260)
+
+## [v1.4.6-preview.40](https://github.com/nanoframework/Windows.Storage/tree/v1.4.6-preview.40) (2022-03-17)
+
+[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.4.6-preview.38...v1.4.6-preview.40)
+
+**Documentation and other chores:**
+
+- Update 3 NuGet dependencies [\#259](https://github.com/nanoframework/Windows.Storage/pull/259)
+
+## [v1.4.6-preview.38](https://github.com/nanoframework/Windows.Storage/tree/v1.4.6-preview.38) (2022-03-14)
+
+[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.4.6-preview.36...v1.4.6-preview.38)
 
 **Documentation and other chores:**
 
