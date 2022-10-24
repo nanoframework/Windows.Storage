@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/Windows.Storage/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.5.13...HEAD)
+[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.5.15...HEAD)
+
+**Documentation and other chores:**
+
+- Update 1 NuGet dependencies [\#280](https://github.com/nanoframework/Windows.Storage/pull/280)
+
+## [v1.5.15](https://github.com/nanoframework/Windows.Storage/tree/v1.5.15) (2022-10-24)
+
+[Full Changelog](https://github.com/nanoframework/Windows.Storage/compare/v1.5.13...v1.5.15)
 
 **Documentation and other chores:**
 
