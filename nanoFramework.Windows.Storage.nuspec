@@ -22,7 +22,7 @@ This package requires a target with nanoFramework.Windows.Storage v$nativeVersio
       <dependency id="nanoFramework.CoreLibrary" version="1.14.2" />
       <dependency id="nanoFramework.Windows.Storage.Streams" version="1.14.22" />
       <dependency id="nanoFramework.Runtime.Events" version="1.11.6" />
-      <dependency id="nanoFramework.System.Text" version="1.2.22" />
+      <dependency id="nanoFramework.System.Text" version="1.2.37" />
     </dependencies>
   </metadata>
   <files>
