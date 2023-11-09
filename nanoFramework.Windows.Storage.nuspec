@@ -20,8 +20,8 @@ This package requires a target with nanoFramework.Windows.Storage v$nativeVersio
     <tags>nanoFramework C# csharp netmf netnf storage</tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="1.15.5" />
-      <dependency id="nanoFramework.Windows.Storage.Streams" version="1.14.24" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.11.6" />
+      <dependency id="nanoFramework.Windows.Storage.Streams" version="1.14.30" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.11.15" />
       <dependency id="nanoFramework.System.Text" version="1.2.37" />
     </dependencies>
   </metadata>
