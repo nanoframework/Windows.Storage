@@ -41,10 +41,21 @@ pool:
 
 variables:
   DOTNET_NOLOGO: true
-  solution: 'nanoFramework.Windows.Storage.sln'
+  solution: ''
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  nugetPackageName: 'nanoFramework.Windows.Storage'
+  nugetPackageName: ''
+  - group: sign-client-credentials
+  - name: DOTNET_NOLOGO
+    value: true  
+  - name: buildPlatform
+    value: 'Any CPU'  
+  - name: buildConfiguration
+    value: 'Release'
+  - name: solution
+    value: 'nanoFramework.Windows.Storage.sln'
+  - name: nugetPackageName
+    value: 'nanoFramework.Windows.Storage'
 
 steps:
 
