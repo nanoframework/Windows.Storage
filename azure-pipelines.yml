@@ -40,11 +40,6 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  DOTNET_NOLOGO: true
-  solution: ''
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-  nugetPackageName: ''
   - group: sign-client-credentials
   - name: DOTNET_NOLOGO
     value: true  
