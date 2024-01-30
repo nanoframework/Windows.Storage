@@ -3,6 +3,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System.Runtime.CompilerServices;
+
 namespace Windows.Storage
 {
     /// <summary>
@@ -39,6 +41,17 @@ namespace Windows.Storage
         /// The ID can be Local, Network, or OneDrive depending on your provider.
         /// </remarks>
         public string Id => _id;
+
+        /// <summary>
+        /// Formats the specified volume.
+        /// *** NOTE THAT THIS OPERATION IS NOT REVERSIBLE ***.
+        /// </summary>
+        /// <param name="driveNane">The <see cref="KnownFolderId"/> to format.</param>
+        /// <exception cref="System.ArgumentException">Thrown when the <paramref name="driveNane"/> is not a supported <see cref="KnownFolderId"/>.</exception>"
+        /// <exception cref="System.NotSupportedException">Thrown when the target doesn't have support for performing the format operation on the specified folder.</exception>
+        /// <exception cref="System.IO.IOException">Thrown when the operation fails.</exception>"
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        public extern void FormatVolume(string driveNane);
 
         //public IAsyncOperation<bool> IsPropertySupportedForPartialFileAsync(String propertyCanonicalName)
         //{ }
