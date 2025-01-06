@@ -116,8 +116,8 @@
     <Reference Include="nanoFramework.Runtime.Events, Version=1.11.18.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.18\lib\nanoFramework.Runtime.Events.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.System.Text, Version=1.2.54.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Text.1.2.54\lib\nanoFramework.System.Text.dll</HintPath>
+    <Reference Include="nanoFramework.System.Text, Version=1.2.99.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Text.1.2.99\lib\nanoFramework.System.Text.dll</HintPath>
     </Reference>
     <Reference Include="Windows.Storage.Streams, Version=1.14.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Windows.Storage.Streams.1.14.32\lib\Windows.Storage.Streams.dll</HintPath>
